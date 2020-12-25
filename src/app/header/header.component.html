@@ -1,0 +1,129 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+  <a class="navbar-brand" href="https://www.academysonatel.com">YFD-ANGULAR</a>
+  <button class="navbar-toggler" type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  href="#">Accueil
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           data-toggle="dropdown"
+           href="#" role="button"
+           aria-haspopup="true"
+           aria-expanded="false">Parametre</a>
+
+        <div class="dropdown-menu">
+          <!-- Profilsortie-->
+
+          <a class="nav-link dropdown-toggle"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+          style="background: #FFB88C">Profil de Sortie</a>
+              <div class="dropdown-submenu">
+                <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/add"> Creation profilsortie</a>
+                <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/list">liste profilsortie</a>
+              </div>
+
+          <!-- COMPETENCES-->
+
+          <a class="nav-link dropdown-toggle"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C">Competences</a>
+              <div class="dropdown-submenu">
+                <a class="dropdown-item" routerLinkActive="active" routerLink="/competences/add"> add Competences</a>
+                <a class="dropdown-item" routerLinkActive="active" routerLink="/competences/list">list competences</a>
+              </div>
+
+          <!-- GROUPE COMPETENCES-->
+          <a class="nav-link dropdown-toggle"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C"> Groupe Competences</a>
+          <div class="dropdown-submenu">
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupecompetences/add"> add Groupe Competence</a>
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupecompetences/list">list Goupe Competence</a>
+          </div>
+
+          <!-- GROUPE TAGS-->
+          <a class="nav-link dropdown-toggle"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C"> Groupe Tag</a>
+          <div class="dropdown-submenu">
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupetags/add"> add Groupe Tag</a>
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupetags/list">list Goupe Tag</a>
+          </div>
+          <!--  REFERENTIELS  -->
+          <a class="nav-link dropdown-toggle"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C"> Refentiels</a>
+          <div class="dropdown-submenu">
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/referentiels/add"> add referentiels </a>
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/referentiels/list">list referentiels</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           data-toggle="dropdown"
+           href="#" role="button"
+           aria-haspopup="true"
+           aria-expanded="false">Utilisateur</a>
+        <div class="dropdown-menu" routerLinkActive="active">
+          <a class="dropdown-item" routerLink="/users/add">Creation User</a>
+          <a class="dropdown-item" routerLink="/users/list"> Lister User</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"
+           data-toggle="dropdown"
+           href="#" role="button"
+           aria-haspopup="true"
+           aria-expanded="false">Profils</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/profils/add">Creation Profils </a>
+          <a class="dropdown-item" routerLink="/profils/list">Lister Profils</a>
+        </div>
+      </li>
+    </ul>
+    <ul>
+      <div class="nav-item">
+        <button class="btn btn-light my-2 my-sm-0" type="submit" style="background: #FFB88C" routerLinkActive="active" routerLink="/login">Connexion</button>
+      </div>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav>
