@@ -18,7 +18,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Forum</a>
       </li>
 
       <li class="nav-item dropdown">
@@ -31,12 +31,12 @@
         <div class="dropdown-menu">
           <!-- Profilsortie-->
 
-          <a class="nav-link dropdown-toggle"
+          <button   class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
              data-toggle="dropdown"
              href="#" role="button"
              aria-haspopup="true"
              aria-expanded="false"
-          style="background: #FFB88C">Profil de Sortie</a>
+          style="background: #FFB88C">Profil de Sortie</button>
               <div class="dropdown-submenu">
                 <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/add"> Creation profilsortie</a>
                 <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/list">liste profilsortie</a>
@@ -44,7 +44,7 @@
 
           <!-- COMPETENCES-->
 
-          <a class="nav-link dropdown-toggle"
+          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
              data-toggle="dropdown"
              href="#" role="button"
              aria-haspopup="true"
@@ -56,7 +56,7 @@
               </div>
 
           <!-- GROUPE COMPETENCES-->
-          <a class="nav-link dropdown-toggle"
+          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
              data-toggle="dropdown"
              href="#" role="button"
              aria-haspopup="true"
@@ -68,7 +68,7 @@
           </div>
 
           <!-- GROUPE TAGS-->
-          <a class="nav-link dropdown-toggle"
+          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
              data-toggle="dropdown"
              href="#" role="button"
              aria-haspopup="true"
@@ -79,7 +79,7 @@
             <a class="dropdown-item" routerLinkActive="active" routerLink="/groupetags/list">list Goupe Tag</a>
           </div>
           <!--  REFERENTIELS  -->
-          <a class="nav-link dropdown-toggle"
+          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
              data-toggle="dropdown"
              href="#" role="button"
              aria-haspopup="true"
@@ -93,28 +93,37 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
+        <a class="nav-link dropdown-toggle "
            data-toggle="dropdown"
            href="#" role="button"
            aria-haspopup="true"
            aria-expanded="false">Utilisateur</a>
+        <!--  USERS  -->
         <div class="dropdown-menu" routerLinkActive="active">
+          <a class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C">Users</a>
+          <div class="dropdown-submenu">
           <a class="dropdown-item" routerLink="/users/add">Creation User</a>
           <a class="dropdown-item" routerLink="/users/list"> Lister User</a>
         </div>
+          <a class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C">Profils</a>
+          <div class="dropdown-submenu">
+            <a class="dropdown-item" routerLink="/profils/add">Creation Profils </a>
+            <a class="dropdown-item" routerLink="/profils/list">Lister Profils</a>
+          </div>
+       </div>
+
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
-           data-toggle="dropdown"
-           href="#" role="button"
-           aria-haspopup="true"
-           aria-expanded="false">Profils</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="/profils/add">Creation Profils </a>
-          <a class="dropdown-item" routerLink="/profils/list">Lister Profils</a>
-        </div>
-      </li>
     </ul>
     <ul>
       <div class="nav-item">
