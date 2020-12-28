@@ -1,92 +1,86 @@
 
-<h2>Liste de Groupe de Competence</h2>
-<div >
-  <div >
-    <div class="card-group">
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
+<h5 class="mt-5">Liste de Groupe de Competence</h5>
+<button class="btn btn-outline-danger float-left"
+        routerLinkActive="active"
+        routerLink="/groupecompetences/add"
+        style="margin: 1%">Creer Groupe Competence</button>
+<table class="table mt-5 " style="background: wheat">
 
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
-        </div>
-      </div>
+  <div class="row">
+    <div class="row col-sm-3 mb-2 m-0" *ngFor="let tab of tabs">
+      <div id="accordion">
+        <div class="card-header"> <h6>Libelle
+          <button class="btn btn-sm btn-outline-danger float-right"
+                  data-toggle="tooltip" data-placement="top" title="supprimer">
+            <i class="fas fa-minus-circle"></i></button>
+          <button class="btn btn-sm btn-outline-warning float-right"
+                  data-toggle="tooltip" data-placement="top" title="modifier">
+            <i class="fas fa-edit"></i></button></h6></div>
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
 
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
+                      aria-expanded="true"
+                      aria-controls="collapseOne">
+                Description
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show"
+               aria-labelledby="headingOne"
+               data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit,
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo">
+                Competences
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo"
+               class="collapse"
+               aria-labelledby="headingTwo"
+               data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit,
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree">
+                Tags
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse"
+               aria-labelledby="headingThree"
+               data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit,
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header text-center" >libelle</div>
-        <button class="btn btn-outline-info">Modifier</button>
-        <button class="btn btn-outline-danger">Supprimer</button>
-        <div class="card-body">
-          <hr>
-          <p class="card-text">descriptions</p>
-          <hr>
-          <p class="card-text">competence</p>
-          <hr>
-          <p class="card-text">tags</p>
-        </div>
-      </div>
-
     </div>
   </div>
-</div>
-
+</table>

@@ -35,6 +35,15 @@ import { AddGrptagComponent } from './groupetags/add-grptag/add-grptag.component
 import { ListGrptagComponent } from './groupetags/list-grptag/list-grptag.component';
 import { EditGrptagComponent } from './groupetags/edit-grptag/edit-grptag.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt';
+import {JwtInterceptor} from './helpers/jwt.interceptor';
+import { AdminComponent } from './users/admin/admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PromotionsComponent } from './promotions/promotions.component';
+import { AddPromotionComponent } from './promotions/add-promotion/add-promotion.component';
+
 
 @NgModule({
   declarations: [
@@ -70,13 +79,24 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AddGrptagComponent,
     ListGrptagComponent,
     EditGrptagComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AdminComponent,
+    PromotionsComponent,
+    AddPromotionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

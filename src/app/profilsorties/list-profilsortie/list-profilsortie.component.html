@@ -1,38 +1,34 @@
 
-<div class="row  justify-content-center " style=" margin-top: 5%;">
-  <h2 class="row justify-content-center">Liste de profils de sorties</h2>
-  <table class="table "  >
+<div class="container w-75">
+  <button class="mt-5 mb-4 btn btn-outline-danger"
+          routerLinkActive="active" routerLink="/profilsorties/add"
+          style="margin: 1%">Creer ProfilSortie</button>
+</div>
 
+<div class=" d-flex justify-content-center ">
+
+  <table class="table w-75">
     <thead>
-    <tr style="background: -webkit-linear-gradient(left , #DE6262, #FFB88C)" >
-      <th scope="col"></th>
+    <tr style="background: -webkit-linear-gradient(left , #DE6262, #FFB88C)">
       <th scope="col">id</th>
       <th scope="col">Libelle</th>
-      <th scope="col">Action1</th>
+      <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td>1</td>
-      <td>Otto</td>
-      <button class="btn btn-outline-warning">Details</button>
-      <button class="btn btn-outline-danger">Delete</button>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>2</td>
-      <td>Thornton</td>
-      <button class="btn btn-outline-warning">Details</button>
-      <button class="btn btn-outline-danger">Delete</button>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>3</td>
-      <td>doudou</td>
-      <button class="btn btn-outline-warning">Details</button>
-      <button class="btn btn-outline-danger">Delete</button>
+    <tr *ngFor="let tab of tabs ">
+      <th scope="row">1</th>
+      <td>otto</td>
+      <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
+              data-placement="top" title="modifier">
+        <i class="fas fa-minus-circle"></i></button>
+      <button class="btn btn-sm btn-outline-danger float-right" data-toggle="tooltip"
+              data-placement="top" title="supprimer">
+        <i class="fas fa-edit"></i>
+      </button>
     </tr>
     </tbody>
   </table>
+
 </div>
+

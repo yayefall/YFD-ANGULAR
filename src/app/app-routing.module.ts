@@ -29,15 +29,22 @@ import {ReferentielsComponent} from './referentiels/referentiels.component';
 import {AddRefernetielComponent} from './referentiels/add-refernetiel/add-refernetiel.component';
 import {ListRefernetielComponent} from './referentiels/list-refernetiel/list-refernetiel.component';
 import {EditRefernetielComponent} from './referentiels/edit-refernetiel/edit-refernetiel.component';
+import {AdminComponent} from './users/admin/admin.component';
+import {PromotionsComponent} from './promotions/promotions.component';
+import {AddPromotionComponent} from './promotions/add-promotion/add-promotion.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
   {path: 'users', component: UsersComponent },
+  {path: 'admin', component: AdminComponent},
 
   {path: 'users/add', component: AddUserComponent},
   {path: 'users/list', component: ListUserComponent},
   {path: 'users/:id', component: DetailUserComponent},
+
+  {path: 'promotions', component: PromotionsComponent},
+  {path: 'promotions/add', component: AddPromotionComponent},
 
   {path: 'profils', component: ProfilsComponent},
   {path: 'profils/add', component: AddProfilComponent},

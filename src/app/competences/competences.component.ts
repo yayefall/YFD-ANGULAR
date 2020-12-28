@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./competences.component.scss']
 })
 export class CompetencesComponent implements OnInit {
+  tabs = [1, 2, 3, 4, 5, 6, 7, 8];
 
   constructor() { }
 
