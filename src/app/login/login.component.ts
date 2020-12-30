@@ -12,7 +12,7 @@ import {first} from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  loading = false;
+  //loading = false;
   submitted = false;
   returnUrl!: string;
 
@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
-    if (this.authenticationService.currentUserValue) {
+    /*if (this.authenticationService.currentUserValue) {
       this.getToken();
-    }
+    }*/
   }
 
   // tslint:disable-next-line:typedef
@@ -54,29 +54,34 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.loading = true;
+    //this.loading = true;
     this.authenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['admin']);
+          const decodedToken = this.authenticationService.getMyToken();
+          console.log(decodedToken);
+          if (decodedToken.roles[0] === 'ROLE_ADMIN'){
+            this.router.navigate(['/admin']);
+          }
+          // this.router.navigate(['admin']);
           console.log(this.authenticationService.getMyToken());
         });
   }
 
   // tslint:disable-next-line:typedef
-  getToken(){
+ /* getToken(){
     // tslint:disable-next-line:prefer-const
     let token = this.currentUser.token;
     // @ts-ignore
-    const helper = new JwtHelperService();
+    // const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(token);
     const isExpired = helper.isTokenExpired(token);
     const expirationDate = helper.getTokenExpirationDate(token);
     if (decodedToken.roles[0] === 'ROLE_ADMIN'){
       this.router.navigate(['/admin']);
     }
-  }
+  }*/
 
   // tslint:disable-next-line:typedef
   /* getConnexion(){
