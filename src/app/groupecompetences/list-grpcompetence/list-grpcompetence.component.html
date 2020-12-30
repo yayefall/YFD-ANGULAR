@@ -1,21 +1,21 @@
 
-<h5 class="mt-5">Liste de Groupe de Competence</h5>
+<h2 class="mt-5">Liste de Groupe de Competence</h2>
 <button class="btn btn-outline-danger float-left"
         routerLinkActive="active"
         routerLink="/groupecompetences/add"
         style="margin: 1%">Creer Groupe Competence</button>
-<table class="table mt-5 " style="background: wheat">
+<table class="table mt-5 shadow-lg p-3 mb-5 bg-white rounded " style="background: wheat">
 
   <div class="row">
     <div class="row col-sm-3 mb-2 m-0" *ngFor="let tab of tabs">
       <div id="accordion">
-        <div class="card-header"> <h6>Libelle
+        <div class="card-header"> <h2>Libelle
           <button class="btn btn-sm btn-outline-danger float-right"
                   data-toggle="tooltip" data-placement="top" title="supprimer">
             <i class="fas fa-minus-circle"></i></button>
           <button class="btn btn-sm btn-outline-warning float-right"
                   data-toggle="tooltip" data-placement="top" title="modifier">
-            <i class="fas fa-edit"></i></button></h6></div>
+            <i class="fas fa-edit"></i></button></h2></div>
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">

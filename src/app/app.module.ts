@@ -43,6 +43,13 @@ import { AdminComponent } from './users/admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { AddPromotionComponent } from './promotions/add-promotion/add-promotion.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatTableModule} from '@angular/material/table';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 @NgModule({
@@ -90,7 +97,13 @@ import { AddPromotionComponent } from './promotions/add-promotion/add-promotion.
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatTableModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatSelectModule,
+    MatTabsModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

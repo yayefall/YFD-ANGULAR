@@ -1,10 +1,46 @@
-<div>
-  <div class="card-header w-50">
-    Création référentiel
-  </div>
-  <div class="card-body">
-<div class="card-item">
-  <input type="checkbox"  style="width: 50%">
+<div class="row  mt-5 w-75 justify-content-center shadow-lg p-3 mb-5 rounded " >
+  <form>
+    <fieldset class="">
+      <legend class="text-center">Creation de Référentiel</legend>
+      <div class="form-group">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"> Libelle</label>
+        <input type="email" class="form-control"
+               id="exampleInputEmail1"
+               aria-describedby="emailHelp"
+               placeholder="libelle">
+      </div>
+
+      <div class="form-group">
+        <label >Presentation</label><br>
+        <textarea name="presentation"  cols="60" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <label >Competence</label>
+        <input type="text" class="form-control" id="exampleInputPassword4" placeholder="competence">
+      </div>
+      <div class="form-group">
+        <label >Programme</label>
+        <input type="file" class="form-control" id="exampleInputPassword2" placeholder="programme">
+      </div>
+
+      <div class="form-group">
+        <label >Critére d'évaluation</label><br>
+        <label>
+          <textarea name="evaluation"  cols="60" rows="5"></textarea>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label >Critére d'admission</label><br>
+        <textarea name="admission"  cols="60" rows="5"></textarea>
+      </div>
+      <div>
+        <button class="btn btn-outline-warning rounded">Soumettre</button>
+      </div>
+    </fieldset>
+  </form>
+
 </div>
-  </div>
-</div>
+
