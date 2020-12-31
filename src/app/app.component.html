@@ -1,6 +1,7 @@
-<app-header></app-header>
-<div class="container">
-<router-outlet></router-outlet>
-</div>
+  <app-header *ngIf="connexion.getAuthorizationToken()"></app-header>
 
-<app-footer></app-footer>
+  <div class="container">
+  <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>

@@ -51,7 +51,7 @@ export class ConnexionService {
     // @ts-ignore
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(currentUser);
-    return currentUser.token;
+    return currentUser;
   }
   // tslint:disable-next-line:typedef
   getMyToken() {

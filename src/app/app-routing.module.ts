@@ -34,7 +34,7 @@ import {PromotionsComponent} from './promotions/promotions.component';
 import {AddPromotionComponent} from './promotions/add-promotion/add-promotion.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
   {path: 'users', component: UsersComponent },
   {path: 'admin', component: AdminComponent},

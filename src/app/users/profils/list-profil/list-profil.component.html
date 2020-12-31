@@ -18,9 +18,11 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let profil of profils ">
+
+        <tr *ngFor="let profil of profils ">
         <th scope="row">{{profil.id}}</th>
         <td>{{profil.libelle}}</td>
+
         <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
                 data-placement="top" title="modifier">
           <i class="fas fa-minus-circle"></i></button>

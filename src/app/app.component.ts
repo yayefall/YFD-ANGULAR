@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConnexionService} from './services/connexion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'YFD-ANGULAR';
+    constructor(public connexion: ConnexionService) {
+    }
 }

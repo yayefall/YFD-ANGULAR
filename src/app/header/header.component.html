@@ -3,12 +3,12 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light shadow-lg p-2 mb-1 rounded "
+<!--  <nav class="navbar navbar-expand-lg navbar-light shadow-lg p-2 mb-1 rounded "
      style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
   <div class="container-fluid">
     <ul class="navbar-nav">
       <div >gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</div>
-      <!-- Avatar -->
+       Avatar
       <div>
       <li class="nav-item dropdown flex-column-reverse">
           <img
@@ -22,7 +22,8 @@
       <div >ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</div>
     </ul>
   </div>
-</nav>
+  <button class="btn btn-outline-danger" (click)="logOout()">deconnexion</button>
+</nav>-->
 
 
 
@@ -31,138 +32,138 @@
 
 
 
-<!-- <nav class="navbar navbar-expand-lg navbar-light " style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
-  <a class="navbar-brand" href="https://www.academysonatel.com">YFD-ANGULAR</a>
-  <button class="navbar-toggler" type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor02"
-          aria-controls="navbarColor02"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+       <nav class="navbar navbar-expand-lg navbar-light " style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+        <a class="navbar-brand" href="https://www.academysonatel.com">YFD-ANGULAR</a>
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse"
+                data-target="#navbarColor02"
+                aria-controls="navbarColor02"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link"  href="#"><i class="fa fa-home"></i>Accueil
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link"  href="#"><i class="fa fa-home"></i>Accueil
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Forum</a>
-      </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Forum</a>
+            </li>
 
-      <li class="nav-item dropdown ">
-        <a class="nav-link dropdown-toggle  dropdown-toggle-split"
-           data-toggle="dropdown"
-           href="#" role="button"
-           aria-haspopup="true"
-           aria-expanded="false">
-          <i class="fa fa-gear"></i>Parametre</a>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle  dropdown-toggle-split"
+                 data-toggle="dropdown"
+                 href="#" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                <i class="fa fa-gear"></i>Parametre</a>
 
-        <div class="dropdown-menu bg-transparent border-0">
-            PROMOTION  -->
-<!--  <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
- d-block justify-content-center w-100 mb-1"
-         data-toggle="dropdown"
-         href="#" role="button"
-         aria-haspopup="true"
-         aria-expanded="false"
-         style="background: #FFB88C"
-         routerLink="/promotions/add">Promotion</button>
-Profilsortie-->
+              <div class="dropdown-menu bg-transparent border-0">
+                <!--  PROMOTION  -->
+      <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+       d-block justify-content-center w-100 mb-1"
+               data-toggle="dropdown"
+               href="#" role="button"
+               aria-haspopup="true"
+               aria-expanded="false"
+               style="background: #FFB88C"
+               routerLink="/promotions/add">Promotion</button>
+                <!--  Profilsortie-->
 
-<!--     <button routerLinkActive="active"  class="rounded nav-link dropdown-toggle btn btn-outline-danger
-    d-block justify-content-center w-100 mb-1"
+          <button routerLinkActive="active"  class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                    data-toggle="dropdown"
+                    href="#" role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="background: #FFB88C"
+                    routerLink="/profilsorties/list">Profil de Sortie</button>
+
+                <!--  COMPETENCES-->
+
+           <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+           d-block justify-content-center w-100 mb-1"
+               data-toggle="dropdown"
+               href="#" role="button"
+               aria-haspopup="true"
+               aria-expanded="false"
+               style="background: #FFB88C"
+                   routerLink="/competences/list">Competences</button>
+
+                <!--  GROUPE COMPETENCES-->
+       <button  class="rounded nav-link dropdown-toggle btn btn-outline-danger
+        d-block justify-content-center w-100 mb-1"
+            data-toggle="dropdown"
+            href="#" role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            style="background: #FFB88C"
+            routerLink="/groupecompetences/list"> Groupe Competences</button>
+
+                <!--  GROUPE TAGS-->
+           <button  routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
               data-toggle="dropdown"
               href="#" role="button"
               aria-haspopup="true"
               aria-expanded="false"
               style="background: #FFB88C"
-              routerLink="/profilsorties/list">Profil de Sortie</button>
+              routerLink="/groupetags/list"> Groupe Tag</button>
 
-     COMPETENCES-->
+                <!--  REFERENTIELS  -->
+         <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+         d-block justify-content-center w-100 mb-1"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false"
+             style="background: #FFB88C"
+                 routerLink="/referentiels/list"> Refentiels</button>
+       </div>
+      </li>
 
-<!--      <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
-     d-block justify-content-center w-100 mb-1"
-         data-toggle="dropdown"
-         href="#" role="button"
-         aria-haspopup="true"
-         aria-expanded="false"
-         style="background: #FFB88C"
-             routerLink="/competences/list">Competences</button>
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle "
+          data-toggle="dropdown"
+          href="#" role="button"
+          aria-haspopup="true"
+          aria-expanded="false"> <i class="fa fa-user"></i>Utilisateur</a>
+        <!--  USERS  -->
+        <div class="dropdown-menu border-0 bg-transparent" routerLinkActive="active">
+          <button class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+             data-toggle="dropdown"
+             href="#" role="button"
+             aria-haspopup="true"
+             aria-expanded="false" routerLink="/users/list"
+                  style="background: #FFB88C"><i class="fa fa-user"></i> Users</button>
 
-     GROUPE COMPETENCES-->
-<!--   <button  class="rounded nav-link dropdown-toggle btn btn-outline-danger
-  d-block justify-content-center w-100 mb-1"
-      data-toggle="dropdown"
-      href="#" role="button"
-      aria-haspopup="true"
-      aria-expanded="false"
-      style="background: #FFB88C"
-      routerLink="/groupecompetences/list"> Groupe Competences</button>
+          <!--   PROFILS  -->
+         <button routerLinkActive="active" class="rounded btn btn-outline-dander nav-link dropdown-toggle
+        d-block justify-content-center w-100 mb-1"
+           data-toggle="dropdown"
+           href="#" role="button"
+           aria-haspopup="true"
+           aria-expanded="false"
+                style="background: #FFB88C"
+                routerLink="/profils/list"> <i class="fa fa-user"></i>Profils</button>
+      </div>
 
-  GROUPE TAGS-->
-<!--     <button  routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
-    d-block justify-content-center w-100 mb-1"
-        data-toggle="dropdown"
-        href="#" role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-        style="background: #FFB88C"
-        routerLink="/groupetags/list"> Groupe Tag</button>
+      </li>
 
-     REFERENTIELS  -->
-<!--    <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
-   d-block justify-content-center w-100 mb-1"
-       data-toggle="dropdown"
-       href="#" role="button"
-       aria-haspopup="true"
-       aria-expanded="false"
-       style="background: #FFB88C"
-           routerLink="/referentiels/list"> Refentiels</button>
- </div>
-</li>
-
-<li class="nav-item dropdown">
- <a class="nav-link dropdown-toggle "
-    data-toggle="dropdown"
-    href="#" role="button"
-    aria-haspopup="true"
-    aria-expanded="false"> <i class="fa fa-user"></i>Utilisateur</a>
-   USERS  -->
-<!--   <div class="dropdown-menu border-0 bg-transparent" routerLinkActive="active">
-    <button class="rounded nav-link dropdown-toggle btn btn-outline-danger
-    d-block justify-content-center w-100 mb-1"
-       data-toggle="dropdown"
-       href="#" role="button"
-       aria-haspopup="true"
-       aria-expanded="false" routerLink="/users/list"
-            style="background: #FFB88C"><i class="fa fa-user"></i> Users</button>
-
-      PROFILS  -->
-<!--   <button routerLinkActive="active" class="rounded btn btn-outline-dander nav-link dropdown-toggle
-  d-block justify-content-center w-100 mb-1"
-     data-toggle="dropdown"
-     href="#" role="button"
-     aria-haspopup="true"
-     aria-expanded="false"
-          style="background: #FFB88C"
-          routerLink="/profils/list"> <i class="fa fa-user"></i>Profils</button>
-</div>
-
-</li>
-
-</ul>
-<ul>
-<div class="nav-item">
-<button class="btn btn-light my-2 my-sm-0" type="submit" style="background: #FFB88C" routerLinkActive="active" routerLink="/login">Connexion</button>
-</div>
-</ul>
+      </ul>
+      <ul>
+      <div class="nav-item">
+      <button class="btn btn-light my-2 my-sm-0" type="submit" style="background: #FFB88C" (click)="logOout()">Deconnexion</button>
+      </div>
+      </ul>
 
 
-</div>
-</nav>  -->
+      </div>
+      </nav>
 
