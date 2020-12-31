@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light " style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+
+<nav class="navbar navbar-expand-lg navbar-light  shadow-lg p-2 mb-1 rounded"
+     style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
   <a class="navbar-brand" href="https://www.academysonatel.com">YFD-ANGULAR</a>
   <button class="navbar-toggler" type="button"
           data-toggle="collapse"
@@ -12,7 +14,7 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"  href="#">Accueil
+        <a class="nav-link"  href="#"><i class="fa fa-home"></i>Accueil
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -21,74 +23,75 @@
         <a class="nav-link" href="#">Forum</a>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle  dropdown-toggle-split"
            data-toggle="dropdown"
            href="#" role="button"
            aria-haspopup="true"
-           aria-expanded="false">Parametre</a>
+           aria-expanded="false">
+          <i class="fa fa-gear"></i>Parametre</a>
 
-        <div class="dropdown-menu">
+        <div class="dropdown-menu bg-transparent border-0">
+          <!--  PROMOTION  -->
+          <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="background: #FFB88C"
+                  routerLink="/promotions/add">Promotion</button>
           <!-- Profilsortie-->
 
-          <button   class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-                    data-toggle="dropdown"
-                    href="#" role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    style="background: #FFB88C">Profil de Sortie</button>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/add"> Creation profilsortie</a>
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/profilsorties/list">liste profilsortie</a>
-          </div>
+          <button routerLinkActive="active"  class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="background: #FFB88C"
+                  routerLink="/profilsorties/list">Profil de Sortie</button>
 
           <!-- COMPETENCES-->
 
-          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-              data-toggle="dropdown"
-              href="#" role="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="background: #FFB88C">Competences</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/competences/add"> add Competences</a>
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/competences/list">list competences</a>
-          </div>
+          <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="background: #FFB88C"
+                  routerLink="/competences/list">Competences</button>
 
           <!-- GROUPE COMPETENCES-->
-          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-              data-toggle="dropdown"
-              href="#" role="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="background: #FFB88C"> Groupe Competences</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupecompetences/add"> add Groupe Competence</a>
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupecompetences/list">list Goupe Competence</a>
-          </div>
+          <button  class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                   data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   style="background: #FFB88C"
+                   routerLink="/groupecompetences/list"> Groupe Competences</button>
 
           <!-- GROUPE TAGS-->
-          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-              data-toggle="dropdown"
-              href="#" role="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="background: #FFB88C"> Groupe Tag</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupetags/add"> add Groupe Tag</a>
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/groupetags/list">list Goupe Tag</a>
-          </div>
+          <button  routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                   data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   style="background: #FFB88C"
+                   routerLink="/groupetags/list"> Groupe Tag</button>
+
           <!--  REFERENTIELS  -->
-          <a  class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-              data-toggle="dropdown"
-              href="#" role="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="background: #FFB88C"> Refentiels</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/referentiels/add"> add referentiels </a>
-            <a class="dropdown-item" routerLinkActive="active" routerLink="/referentiels/list">list referentiels</a>
-          </div>
+          <button routerLinkActive="active" class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="background: #FFB88C"
+                  routerLink="/referentiels/list"> Refentiels</button>
         </div>
       </li>
 
@@ -97,43 +100,49 @@
            data-toggle="dropdown"
            href="#" role="button"
            aria-haspopup="true"
-           aria-expanded="false">Utilisateur</a>
+           aria-expanded="false"> <i class="fa fa-user"></i>Utilisateur</a>
         <!--  USERS  -->
-        <div class="dropdown-menu" routerLinkActive="active">
-          <a class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-             data-toggle="dropdown"
-             href="#" role="button"
-             aria-haspopup="true"
-             aria-expanded="false"
-             style="background: #FFB88C">Users</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLink="/users/add">Creation User</a>
-            <a class="dropdown-item" routerLink="/users/list"> Lister User</a>
-          </div>
-          <a class="nav-link dropdown-toggle btn btn-outline-danger d-block justify-content-center w-100 mb-1"
-             data-toggle="dropdown"
-             href="#" role="button"
-             aria-haspopup="true"
-             aria-expanded="false"
-             style="background: #FFB88C">Profils</a>
-          <div class="dropdown-submenu">
-            <a class="dropdown-item" routerLink="/profils/add">Creation Profils </a>
-            <a class="dropdown-item" routerLink="/profils/list">Lister Profils</a>
-          </div>
+        <div class="dropdown-menu border-0 bg-transparent" routerLinkActive="active">
+          <button class="rounded nav-link dropdown-toggle btn btn-outline-danger
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false" routerLink="/users/list"
+                  style="background: #FFB88C"><i class="fa fa-user"></i> Users</button>
+
+          <!--  PROFILS  -->
+          <button routerLinkActive="active" class="rounded btn btn-outline-dander nav-link dropdown-toggle
+          d-block justify-content-center w-100 mb-1"
+                  data-toggle="dropdown"
+                  href="#" role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="background: #FFB88C"
+                  routerLink="/profils/list"> <i class="fa fa-user"></i>Profils</button>
         </div>
 
       </li>
-
     </ul>
+
+
+      <select class="form-select  form-control col-sm-2 bg-transparent">
+        <option value="1">COHORTE 1</option>
+        <option value="2">COHORTE 2</option>
+        <option value="3">COHORTE 3</option>
+      </select>
+
+
     <ul>
       <div class="nav-item">
-        <button class="btn btn-light my-2 my-sm-0" type="submit" style="background: #FFB88C" routerLinkActive="active" routerLink="/home">Deconnexion</button>
+        <button class="btn btn-light my-2 my-sm-0" type="submit" style="background: #FFB88C" routerLinkActive="active" routerLink="/login">Deconnexion</button>
       </div>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>-->
+
   </div>
 </nav>
 

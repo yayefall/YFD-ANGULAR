@@ -18,7 +18,7 @@
                    formControlName="username"
                    [ngClass]="{'is-invalid': submitted && f.username.errors}">
             <div *ngIf="submitted && f.username.errors">
-              <div class="errorClasse" *ngIf="f.username.errors.required" style="color: red">Username obligatoire **</div></div>
+              <div class="errorClasse text-danger" *ngIf="f.username.errors.required" >Username obligatoire **</div></div>
           </div>
 
           <div class="form-group">
@@ -33,7 +33,7 @@
                    required
                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
             <div *ngIf="submitted && f.password.errors">
-              <div class="errorClasse " *ngIf="f.password.errors.required" style="color: red">password obligatoire **</div></div>
+              <div class="errorClasse text-danger " *ngIf="f.password.errors.required" >password obligatoire **</div></div>
           </div>
 
           <div class="form-check">
@@ -41,7 +41,7 @@
               <input type="checkbox" class="form-check-input">
               <small>Remember Me</small>
             </label>
-            <span *ngIf="true"></span>
+
             <button type="submit" class="btn btn-login float-right" [disabled]="loginForm.invalid">Connexion</button>
           </div>
         </form>

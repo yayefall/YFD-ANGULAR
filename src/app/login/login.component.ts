@@ -12,7 +12,6 @@ import {first} from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  //loading = false;
   submitted = false;
   returnUrl!: string;
 
@@ -54,7 +53,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    //this.loading = true;
     this.authenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
@@ -70,6 +68,12 @@ export class LoginComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
+  /* getConnexion(){
+     this.maConnexion = true;
+   }*/
+
+
+  // tslint:disable-next-line:typedef
  /* getToken(){
     // tslint:disable-next-line:prefer-const
     let token = this.currentUser.token;
@@ -83,8 +87,5 @@ export class LoginComponent implements OnInit {
     }
   }*/
 
-  // tslint:disable-next-line:typedef
-  /* getConnexion(){
-     this.maConnexion = true;
-   }*/
+
 }

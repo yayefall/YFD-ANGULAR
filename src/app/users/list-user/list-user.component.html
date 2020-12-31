@@ -1,3 +1,4 @@
+<app-admin></app-admin>
 <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded " style="margin: 2%">
     <div>
       <button class="btn btn-outline-danger "
@@ -14,24 +15,26 @@
           <th scope="col">Username</th>
           <th scope="col">Telephone</th>
           <th scope="col">Profils</th>
-          <th scope="col">Photo</th>
           <th scope="col">Genre</th>
+          <th scope="col">Photo</th>
           <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let tab of tabs">
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{user.id}}</th>
+          <td>{{user.nom}}</td>
+          <td>{{user.prenom}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.telephone}}</td>
+          <td>{{user.profils}}</td>
+          <td>{{user.genre}}</td>
+          <td><img src="data:image/png;base64,{{user.photo}}" width="50" height="50" border-radius="100%" alt=""></td>
+
           <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
                   data-placement="top" title="modifier">
             <i class="fas fa-minus-circle"></i></button>
+
           <button class="btn btn-sm btn-outline-danger float-right" data-toggle="tooltip"
                   data-placement="top" title="supprimer">
             <i class="fas fa-edit"></i></button>

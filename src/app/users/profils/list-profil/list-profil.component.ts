@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProfilService} from '../../../services/profil.service';
 
 @Component({
   selector: 'app-list-profil',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-profil.component.scss']
 })
 export class ListProfilComponent implements OnInit {
-  tabs = [1, 2, 3, 4, 5, 6];
-
-  constructor() { }
+  profils = [];
+  constructor( private profilService: ProfilService) { }
 
   ngOnInit(): void {
+    this.getProfil();
   }
-
+  // tslint:disable-next-line:typedef
+  getProfil(){
+    this.profilService.getProfils().subscribe(
+      data => {
+        // @ts-ignore
+        this.profils = data;
+        console.log(data);
+      }
+    );
+  }
 }

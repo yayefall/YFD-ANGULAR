@@ -1,4 +1,6 @@
 
+<app-admin></app-admin>
+
 <div class="container w-75 ">
   <button class="mt-5 mb-4 btn btn-outline-danger"
           routerLinkActive="active" routerLink="/profils/add"
@@ -16,9 +18,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let tab of tabs ">
-        <th scope="row">1</th>
-        <td>otto</td>
+      <tr *ngFor="let profil of profils ">
+        <th scope="row">{{profil.id}}</th>
+        <td>{{profil.libelle}}</td>
         <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
                 data-placement="top" title="modifier">
           <i class="fas fa-minus-circle"></i></button>
