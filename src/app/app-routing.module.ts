@@ -32,6 +32,7 @@ import {EditRefernetielComponent} from './referentiels/edit-refernetiel/edit-ref
 import {AdminComponent} from './users/admin/admin.component';
 import {PromotionsComponent} from './promotions/promotions.component';
 import {AddPromotionComponent} from './promotions/add-promotion/add-promotion.component';
+import {EditProfilComponent} from './users/profils/edit-profil/edit-profil.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -49,6 +50,7 @@ const routes: Routes = [
   {path: 'profils', component: ProfilsComponent},
   {path: 'profils/add', component: AddProfilComponent},
   {path: 'profils/list', component: ListProfilComponent},
+  {path: 'profils/edit/:id', component: EditProfilComponent},
 
   {path: 'profilsorties', component: ProfilsortiesComponent},
   {path: 'profilsorties/add', component: AddProfilsortieComponent},

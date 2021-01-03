@@ -7,7 +7,7 @@ import {ProfilService} from '../../../services/profil.service';
   styleUrls: ['./list-profil.component.scss']
 })
 export class ListProfilComponent implements OnInit {
-  profils = [];
+  profils: any = [];
   constructor( private profilService: ProfilService) { }
 
   ngOnInit(): void {
@@ -19,8 +19,20 @@ export class ListProfilComponent implements OnInit {
       data => {
         // @ts-ignore
         this.profils = data;
+        // console.log(this.profils );
+      });
+  }
+  // tslint:disable-next-line:typedef
+  deleteProfilsById(id: any){
+    this.profilService.deleteProfils(id).subscribe(
+      // alert('voulez vous success'),
+      (data: any) => {
         console.log(data);
-      }
-    );
+        alert('supression avec success');
+      },
+      (error: any) => {
+        alert('erreur');
+
+      });
   }
 }

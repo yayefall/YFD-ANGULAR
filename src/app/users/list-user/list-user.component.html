@@ -21,15 +21,15 @@
         </tr>
         </thead>
         <tbody>
-         <tr *ngFor="let user of users">
+       <tr *ngFor="let user of users">
           <th scope="row">{{user.id}}</th>
-          <td>{{user.nom}}</td>
-          <td>{{user.prenom}}</td>
-          <td>{{user.username}}</td>
-          <td>{{user.telephone}}</td>
-          <td>{{user.profils.libelle}}</td>
-          <td>{{user.genre}}</td>
-          <td><img src="data:image/png;base64,{{user.photo}}" width="50" height="50" border-radius="100%" alt=""></td>
+        <td>{{user.nom}}</td>
+        <td>{{user.prenom}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.telephone}}</td>
+        <td>{{user.profils.libelle}}</td>
+        <td>{{user.genre}}</td>
+        <td><img src="data:image/png;base64,{{user.photo}}" width="50" height="50" border-radius="100%" alt=""></td>
 
 
           <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"

@@ -50,7 +50,6 @@ export class ConnexionService {
   getAuthorizationToken(): string {
     // @ts-ignore
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(currentUser);
     return currentUser;
   }
   // tslint:disable-next-line:typedef
