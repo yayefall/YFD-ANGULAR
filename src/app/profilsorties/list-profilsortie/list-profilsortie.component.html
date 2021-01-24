@@ -3,7 +3,7 @@
 
 
 <div class="container w-75 " >
-  <button class="mt-5 mb-4 btn btn-outline-danger"
+  <button class="mt-2 mb-4 btn btn-outline-danger"
           routerLinkActive="active" routerLink="/profilsorties/add"
           style="margin: 1%">Creer ProfilSortie</button>
 </div>
@@ -19,16 +19,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let tab of tabs ">
-      <th scope="row">1</th>
-      <td>otto</td>
-      <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
-              data-placement="top" title="modifier">
+    <tr *ngFor="let profilsortie of profilsorties ">
+      <th scope="row">{{profilsortie.id}}</th>
+      <td>{{profilsortie.libelle}}</td>
+      <button  (click)="deleteProfilsotiById(profilsortie.id)"
+               class="btn btn-sm btn-outline-info float-right"
+               data-toggle="tooltip"
+              data-placement="top" title="Supprimer">
         <i class="fas fa-minus-circle"></i></button>
-      <button class="btn btn-sm btn-outline-danger float-right" data-toggle="tooltip"
-              data-placement="top" title="supprimer">
-        <i class="fas fa-edit"></i>
-      </button>
+      <a routerLinkActive="active" routerLink="/profilsorties/edit/{{profilsortie.id}}">
+        <button class="btn btn-sm btn-outline-danger float-right"
+                data-toggle="tooltip"
+              data-placement="top" title="Modifier">
+        <i class="fas fa-edit"></i></button></a>
     </tr>
     </tbody>
   </table>

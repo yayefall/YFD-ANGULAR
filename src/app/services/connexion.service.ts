@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Users} from '../modeles/users';
@@ -49,8 +49,7 @@ export class ConnexionService {
   }
   getAuthorizationToken(): string {
     // @ts-ignore
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser;
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
   // tslint:disable-next-line:typedef
   getMyToken() {

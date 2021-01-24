@@ -4,33 +4,47 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card shadow-lg p-3 mb-5 bg-white rounded" >
-          <div class="card-header text-center" style="background: #FFB88C">Création d'un Groupe de Compétence</div>
+          <div class="card-header text-center" style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+            Création d'un Groupe de Compétence</div>
+          {{formGrouCompetence.value | json}}
           <div class="card-body">
-            <form action="" method="">
+            <form [formGroup]="formGrouCompetence" (ngSubmit)="onSubmit()">
               <div class="form-group row">
-                <label  class="col-md-4 col-form-label text-md-right">Libellle</label>
+                <label  class="col-md-4 col-form-label text-md-right">Libelle</label>
                 <div class="col-md-6">
-                  <input type="text" id="email_address" class="form-control"
-                         name="email-address" required autofocus>
+                  <input type="text"
+                         id="libelle"
+                         class="form-control"
+                         name="libelle"
+                         required autofocus
+                         [formControlName]="'libelle'">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label  class="col-md-4 col-form-label text-md-right">Description</label>
+                <label  class="col-md-4 col-form-label text-md-right">Descriptif</label>
                 <textarea class="form-control col-md-6 col-form-label text-md-right"
-                          id="exampleFormControlTextarea1" rows="3" required autofocus></textarea>
+                          id="descriptif"
+                          rows="3"
+                          name="descriptif"
+                          [formControlName]="'descriptif'"></textarea>
               </div>
 
 
               <div class="form-group row">
                 <label  class="col-md-4 col-form-label text-md-right">Competences</label>
-                <textarea class="form-control col-md-6 col-form-label text-md-right"
-                          id="exampleFormControlTextarea2" rows="3" required autofocus></textarea>
+                <select class=" form-control form-select col-md-6"
+                        name="competences"
+                        [formControlName]="'competences'"
+                        multiple>
+                  <option *ngFor="let c of competences" value="{{c.id}}">{{c.libelle}}</option>
+                </select>
               </div>
 
 
               <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger"
+                [disabled]="!formGrouCompetence.valid">
                   Enregistrer
                 </button>
               </div>

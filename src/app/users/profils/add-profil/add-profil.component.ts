@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {ProfilService} from '../../../services/profil.service';
 
 @Component({
@@ -14,12 +14,7 @@ export class AddProfilComponent implements OnInit {
                     private formbuild: FormBuilder) { }
   // @ts-ignore
   ngOnInit(): void {
-    // tslint:disable-next-line:label-position no-unused-expression
-    // @ts-ignore
-
   }
-
-
 
   // tslint:disable-next-line:typedef
   onSubmit() {
@@ -28,7 +23,7 @@ export class AddProfilComponent implements OnInit {
      // @ts-ignore
     this.prifilservice.postProfils(this.formlibelle.value).subscribe(
       data => {
-        alert('insere avec succes');
+        alert('inserer avec succes');
        },
       error => {
         alert('erreur');

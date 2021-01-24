@@ -5,13 +5,17 @@
 background: -webkit-linear-gradient(left, #DE6262, #FFB88C)" >
     <div class="row justify-content-center align-items-center" >
       <h2 class="row justify-content-center">Création d'un profilsortie</h2>
-      <form>
+      <form [formGroup]="formProfilsortie" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="formGroupExampleInput"> Libelle</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder=" Libelle">
+          <label for="libelle"> Libelle</label>
+          <input type="text"
+                 class="form-control"
+                 id="libelle"
+                 placeholder=" Libelle"
+                 [formControlName]="'libelle'">
         </div>
         <div class="row justify-content-end">
-          <button class="btn btn-outline-danger">Ajouter</button>
+          <button class="btn btn-outline-danger" [disabled]="!formProfilsortie.valid">Ajouter</button>
         </div>
       </form>
     </div>

@@ -11,7 +11,8 @@ import {first} from 'rxjs/operators';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  // @ts-ignore
+  loginForm: FormGroup;
   submitted = false;
   returnUrl!: string;
 

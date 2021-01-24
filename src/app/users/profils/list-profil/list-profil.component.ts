@@ -19,20 +19,23 @@ export class ListProfilComponent implements OnInit {
       data => {
         // @ts-ignore
         this.profils = data;
-        // console.log(this.profils );
+      },
+      error => {
+        alert('il ya erreur de recuperation des données');
       });
   }
   // tslint:disable-next-line:typedef
-  deleteProfilsById(id: any){
-    this.profilService.deleteProfils(id).subscribe(
-      // alert('voulez vous success'),
-      (data: any) => {
-        console.log(data);
-        alert('supression avec success');
-      },
-      (error: any) => {
-        alert('erreur');
+  deleteProfilsById(id: any) {
+    if (confirm('Etes vous sure de vouloir supprimer')) {
+      this.profilService.deleteProfils(id).subscribe(
+        (data: any) => {
+          console.log(data);
+          alert('supression avec success');
+        },
+        (error: any) => {
+          alert('erreur');
 
-      });
+        });
+    }
   }
 }

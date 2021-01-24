@@ -1,1 +1,51 @@
-<p>edit-grpcompetence works!</p>
+
+<main class="login-form">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" >
+          <div class="card-header text-center" style="background: #FFB88C">Modification d'un Groupe de Compétence</div>
+          <div class="card-body">
+            <form [formGroup]="formGrouCompetence" (ngSubmit)="onSubmit()">
+              <div class="form-group row">
+                <label  class="col-md-4 col-form-label text-md-right">Libelle</label>
+                <div class="col-md-6">
+                  <input type="text"
+                         id="libelle"
+                         class="form-control"
+                         name="libelle"
+                         [formControlName]="'libelle'">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-md-4 col-form-label text-md-right">Descriptif</label>
+                <textarea class="form-control col-md-6 col-form-label text-md-right"
+                          id="descriptif"
+                          rows="3"
+                          name="descriptif"
+                          [formControlName]="'descriptif'"></textarea>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-md-4 col-form-label text-md-right">Competences</label>
+                <textarea class="form-control col-md-6 col-form-label text-md-right"
+                          id="competences"
+                          rows="3"
+                          name="competences"
+                          [formControlName]="'competences'"></textarea>
+              </div>
+
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-danger">
+                  Modifier
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

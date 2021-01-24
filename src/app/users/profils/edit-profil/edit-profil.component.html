@@ -1,14 +1,15 @@
 
 <div class="row justify-content-center">
-
-  <div class="card shadow-lg p-3 mb-5 bg-white rounded " style="margin-top: 5%; width: 30rem;
-background: -webkit-linear-gradient(left, #DE6262, #FFB88C)" >
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded "
+       style="margin-top: 5%; width: 30rem;
+        background: -webkit-linear-gradient(left, #DE6262, #FFB88C)" >
     <div class="row justify-content-center align-items-center" >
-      <h2 class="row justify-content-center">Création d'un profils</h2>
-      <form [formGroup]="formlibelle" (ngSubmit)="onSubmit()">
+      <h2 class="row justify-content-center">Modification du profils</h2>
+      <form [formGroup]="formlibelle"  (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="libelle"> Libelle</label>
-          <input type="text" id="libelle"
+          <input type="text"
+                 id="libelle"
                  class="form-control"
                  placeholder=" Libelle"
                  [formControlName]="'libelle'">

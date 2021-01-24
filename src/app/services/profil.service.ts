@@ -13,7 +13,7 @@ export class ProfilService {
   }
 
   getProfils(): Observable<Profils[]> {
-    return this.http.get<Profils[]>(`${environment.apiUrl}/admin/profils`);
+    return this.http.get<Profils[]>(`${environment.apiUrl}/admin/profils?archivage=0`);
   }
   // tslint:disable-next-line:typedef
    postProfils(body: any){

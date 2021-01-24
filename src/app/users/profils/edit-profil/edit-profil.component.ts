@@ -12,14 +12,14 @@ export class EditProfilComponent implements OnInit {
   formlibelle = this.formbuilder.group({
     libelle: ['', [Validators.required]]
   });
-  constructor( private prifilservice: ProfilService,
+  constructor( private profilservice: ProfilService,
                private formbuilder: FormBuilder,
                private  route: ActivatedRoute) { }
   public profil: any;
   private id: any ;
   ngOnInit(): void {
-  this.id = this.route.snapshot.paramMap.get('id');
-  this.prifilservice.getProfilsById(this.id).subscribe(
+  this.id = this.route.snapshot.paramMap.get('id'); // il permet recuperer la valeur de l'id
+  this.profilservice.getProfilsById(this.id).subscribe(
   (data) => {
       this.profil = data;
       const libelle = document.getElementById('libelle');
@@ -32,7 +32,7 @@ export class EditProfilComponent implements OnInit {
   onSubmit() {
     // @ts-ignore
     // @ts-ignore
-    this.prifilservice.putProfils(this.formlibelle.value, this.id ).subscribe(
+    this.profilservice.putProfils(this.formlibelle.value, this.id ).subscribe(
         (data: any) => {
         console.log(data);
         alert('modification avec succes');

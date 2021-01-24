@@ -1,15 +1,15 @@
 
-<app-admin></app-admin>
 
-<div class="container w-75 ">
-  <button class="mt-5 mb-4 btn btn-outline-danger"
-          routerLinkActive="active" routerLink="/profils/add"
-          style="margin: 1%">Creer Profils</button>
-</div>
 
-  <div class=" d-flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded ">
+  <div class=" table-responsive shadow-lg p-3 mb-5 bg-white rounded w-75 " style="margin: 4%">
 
-    <table class="table w-75">
+    <div>
+      <button class="btn btn-outline-danger"
+              routerLinkActive="active"
+              routerLink="/profils/add"
+              style="margin: 2%">Creer Profils</button>
+
+    <table class="table">
       <thead>
       <tr style="background: -webkit-linear-gradient(left , #DE6262, #FFB88C)">
         <th scope="col">id</th>
@@ -22,7 +22,9 @@
          <th scope="row">{{profil.id}}</th>
          <td>{{profil.libelle}}</td>
 
-         <button (click)="deleteProfilsById(profil.id)" class="btn btn-sm btn-outline-danger float-right" data-toggle="tooltip"
+         <button (click)="deleteProfilsById(profil.id)"
+                 class="btn btn-sm btn-outline-danger float-right"
+                 data-toggle="tooltip"
               data-placement="top" title="supprimer">
        <i class="fas fa-minus-circle"></i></button>
          <a routerLinkActive="active" routerLink="/profils/edit/{{profil.id}}">
@@ -31,6 +33,6 @@
     </tr>
     </tbody>
   </table>
-
+    </div>
 </div>
 

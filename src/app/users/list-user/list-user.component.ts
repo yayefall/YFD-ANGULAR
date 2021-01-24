@@ -26,4 +26,18 @@ export class ListUserComponent implements OnInit {
       }
     );
   }
+  // tslint:disable-next-line:typedef
+  deleteUserById(id: any){
+    if (confirm('Etes vous sure de vouloir supprimer')) {
+      this.userService.deleteUsers(id).subscribe(
+        (data: any) => {
+          console.log(data);
+          alert('supression avec success');
+        },
+        (error: any) => {
+          alert('erreur de recuperation');
+
+        });
+    }
+  }
 }

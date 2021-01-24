@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { ListUserComponent } from './users/list-user/list-user.component';
-import { DetailUserComponent } from './users/detail-user/detail-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { ProfilsComponent } from './users/profils/profils.component';
 import { AddProfilComponent } from './users/profils/add-profil/add-profil.component';
 import { ListProfilComponent } from './users/profils/list-profil/list-profil.component';
@@ -49,6 +49,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AccueilComponent } from './accueil/accueil.component';
+import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {ButtonsModule, CollapseModule, WavesModule} from 'angular-bootstrap-md';
 
 
 
@@ -60,7 +64,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     UsersComponent,
     AddUserComponent,
     ListUserComponent,
-    DetailUserComponent,
+    EditUserComponent,
     ProfilsComponent,
     AddProfilComponent,
     ListProfilComponent,
@@ -89,7 +93,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     PageNotFoundComponent,
     AdminComponent,
     PromotionsComponent,
-    AddPromotionComponent
+    AddPromotionComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
@@ -104,6 +109,11 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatChipsModule,
     MatSelectModule,
     MatTabsModule,
+    MatListModule,
+    MatGridListModule,
+    CollapseModule,
+    WavesModule,
+    ButtonsModule
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

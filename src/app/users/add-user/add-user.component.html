@@ -12,56 +12,116 @@
     </div>
 
     <div class="col-md-9 register-right shadow-lg p-3 mb-5 bg-white rounded ">
-      <form action="">
+      {{formdata.value | json}}
+      <form [formGroup]="formdata" (ngSubmit)="onSubmit()">
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home"
              role="tabpanel" aria-labelledby="home-tab">
-          <h3 class="register-heading">Création d'un user</h3>
+          <h3 class="register-heading" >Création d'un user</h3>
           <div class="row register-form">
             <div class="col-md-6">
-              <div class="form-group " style="width: 100%; height: 50%; background: -webkit-linear-gradient(left , #DE6262, #FFB88C);border-radius: 50%">
-                <img  src="" alt="">
+              <div class="form-group " style="width: 40%; height: 20%; background: -webkit-linear-gradient(left , #DE6262, #FFB88C);border-radius: 50%">
+                <img  [src]="image" alt="">
               </div>
             </div>
+
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nom*" value="" />
+                <label for="nom">Nom</label>
+                <input type="text"
+                       name="nom"
+                       id="nom"
+                       class="form-control"
+                       placeholder="Nom*"
+                       value=""
+                       title="Entre votre nom"
+                       autofocus
+                       [formControlName]="'nom'">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Prenom *" value="" />
+                <label for="prenom">Prenom</label>
+                <input type="text"
+                       name="prenom"
+                       id="prenom"
+                       class="form-control"
+                       placeholder="Prenom *"
+                       value=""
+                       title="Entre votre Prenom"
+                       [formControlName]="'prenom'">
               </div>
 
               <div class="form-group">
-                <input type="email" class="form-control" placeholder= " Email *" value="" />
+                <label for="email">Username</label>
+                <input type="text"
+                       id="username"
+                       name="telephone"
+                       class="form-control"
+                       placeholder= " username *"
+                       value=""
+                       title="Entre votre username"
+                       [formControlName]="'username'">
+              </div>
+
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control"
+                       placeholder= " Email *"
+                       value=""
+                       title="Entre votre email"
+                       [formControlName]="'email'">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Telephone</label>
+                <input type="number"
+                       id="telephone"
+                       name="telephone"
+                       class="form-control"
+                       placeholder= " telephone *"
+                       value=""
+                       title="Entre votre telephone"
+                       [formControlName]="'telephone'">
               </div>
 
               <div class="form-group">
                 <div class="maxl">
+                  <label >Gender</label><br>
                   <label class="radio inline">
-                    <input type="radio" name="gender" value="homme" >
+                    <input type="radio" name="gender" value="homme"[formControlName]="'gender'" >
                     <span> Homme </span>
                   </label>
                   <label class="radio inline">
-                    <input type="radio" name="gender" value="femme">
+                    <input type="radio" name="gender" value="femme" [formControlName]="'gender'">
                     <span>Femme </span>
                   </label>
                 </div>
               </div>
-              <div class="col-md-6">
-              <div class="form-group">
-                <select name="profils" id="idProfils">
-                  <option value="">Profils </option>
-                  <option value="1">ADMIN</option>
-                  <option value="2">FORMATEUR</option>
-                  <option value="3">CM</option>
-                </select>
-                  </div>
-              </div>
 
               <div class="form-group">
-                <input type="file" class="form-control" placeholder="choisir un ficher *" value="" />
+                <label >Profils</label>
+                <select class=" form-control form-select"[formControlName]="'profils'">
+                  <option *ngFor="let p of profils" value="api/admin/profils/{{p.id}}">{{p.libelle}}</option>
+                </select>
+                  </div>
+
+              <div class="form-group">
+                <input type="file"
+                       name="photo"
+                       id="photo"
+                       class="form-control"
+                       placeholder="choisir un ficher *"
+                       value=""
+                       [formControlName]="'photo'"
+                       (change)="handleFileInput($event)">
               </div>
-              <input type="submit" class="btn btn-warning" style="background: #FFB88C"  value="Enregistrer"/>
+              <input type="submit" class="btn btn-warning"
+                     style="background: #FFB88C"
+                     value="Enregistrer"
+                     [disabled]="!formdata.valid">
             </div>
           </div>
 
