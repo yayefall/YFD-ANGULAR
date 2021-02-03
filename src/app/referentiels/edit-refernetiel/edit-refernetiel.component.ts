@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-refernetiel',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditRefernetielComponent implements OnInit {
 
-  constructor() { }
+  formReferentiels =  this.formbuilder.group({
+    libelle: ['', [Validators.required]],
+    presentation: ['', [Validators.required]],
+    programme: ['', [Validators.required]],
+    critereAdmission: ['', [Validators.required]],
+    critereEvaluation: ['', [Validators.required]],
+    groupeCompetences: [[], [Validators.required]]
+  });
+
+  constructor( private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(): any {
+
+  }
 }

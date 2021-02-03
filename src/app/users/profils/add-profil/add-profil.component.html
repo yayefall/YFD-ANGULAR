@@ -1,11 +1,12 @@
-
-<div class="row justify-content-center">
-
-<div class="card shadow-lg p-3 mb-5 bg-white rounded "
-     style="margin-top: 5%; width: 30rem;
-     background: -webkit-linear-gradient(left, #DE6262, #FFB88C)" >
-<div class="row justify-content-center align-items-center" >
-  <h2 class="row justify-content-center">Création d'un profils</h2>
+<main class="login-form">
+  <div class="container shadow-lg rounded">
+<div class="row justify-content-center shadow-lg mt-5 mb-5">
+<div class="col-md-8 shadow-lg mt-5 ">
+  <div class="card-header text-center shadow-lg"
+       style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+    Création d'un profilsortie</div>
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded "  >
+    <div class="row justify-content-center align-items-center" >
 <form [formGroup]="formlibelle" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="formGroupExampleInput"> Libelle</label>
@@ -17,8 +18,11 @@
   </div>
   <div class="row justify-content-end">
   <button class="btn btn-outline-danger" datafld="true" [disabled]="!formlibelle.valid">Ajouter</button>
-    </div>
-</form>
-</div>
-</div>
-</div>
+      </div>
+      </form>
+        </div>
+       </div>
+      </div>
+     </div>
+   </div>
+</main>

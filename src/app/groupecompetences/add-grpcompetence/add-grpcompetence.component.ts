@@ -9,6 +9,9 @@ import {CompetenceService} from '../../services/competence.service';
   styleUrls: ['./add-grpcompetence.component.scss']
 })
 export class AddGrpcompetenceComponent implements OnInit {
+  competences: any = [];
+  selectedItems = [];
+  dropdownSettings: any = {};
 
   formGrouCompetence = this.formbuilder.group({
     libelle: ['', [Validators.required]],
@@ -19,14 +22,23 @@ export class AddGrpcompetenceComponent implements OnInit {
                private grpcompetenceService: GrpcompetenceService,
                private competenceService: CompetenceService) { }
 
- competences: any;
-
   ngOnInit(): void {
   this.competenceService.getCompetence().subscribe(
-    reponse => {
-      this.competences = reponse;
+    response => {
+      this.competences = response;
       console.log(this.competences);
     });
+
+  this.dropdownSettings = {
+      primaryKey: 'id',
+      singleSelection: false,
+      text: 'Select  Competences',
+      labelKey: 'libelle',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      enableSearchFilter: true,
+      classes: 'myclass custom-class'
+    };
   }
   onSubmit(): any {
    this.grpcompetenceService.postGroupeCompetence(this.formGrouCompetence.value).subscribe(

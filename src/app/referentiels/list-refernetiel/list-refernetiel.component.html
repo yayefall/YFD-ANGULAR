@@ -1,131 +1,49 @@
 
-<h5 class="mt-5">Liste de Référentiels </h5>
+<div class="card-header text-center mt-5" style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">Liste  Référentiels</div>
 <button class="btn btn-outline-danger float-left"
         routerLinkActive="active"
         routerLink="/referentiels/add"
         style="margin: 1%">Creer Référentiels</button>
-<table class="table mt-5 ">
+<table class="table mt-5 shadow-lg p-3  bg-white rounded w-90 ">
 
-  <div class="row shadow-lg p-3 mb-5 bg-white rounded ">
-    <div class="row col-sm-3 mb-2 m-0" *ngFor="let tab of tabs">
-      <div id="accordion">
-        <div class="card-header"> <h6>Libelle
-          <button class="btn btn-sm btn-outline-danger float-right"
-                  data-toggle="tooltip" data-placement="top" title="supprimer">
-            <i class="fas fa-minus-circle"></i></button>
-          <button class="btn btn-sm btn-outline-warning float-right"
-                  data-toggle="tooltip" data-placement="top" title="modifier">
-            <i class="fas fa-edit"></i></button></h6></div>
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link"
-                      data-toggle="collapse"
-                      data-target="#collapseOne"
-
-                      aria-expanded="true"
-                      aria-controls="collapseOne">
-                Preésentation
-              </button>
-            </h5>
-          </div>
-
-          <div id="collapseOne" class="collapse show"
-               aria-labelledby="headingOne"
-               data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit,
-
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed"
-                      data-toggle="collapse"
-                      data-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo">
-                Groupe Competences
-              </button>
-            </h5>
-          </div>
-          <div id="collapseTwo"
-               class="collapse"
-               aria-labelledby="headingTwo"
-               data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit,
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingFor">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed"
-                      data-toggle="collapse"
-                      data-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo">
-                Programme
-              </button>
-            </h5>
-          </div>
-          <div id="collapseFor"
-               class="collapse"
-               aria-labelledby="headingTwo"
-               data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit,
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree">
-                Critère d'évaluation
-              </button>
-            </h5>
-          </div>
-          <div id="collapseThree" class="collapse"
-               aria-labelledby="headingThree"
-               data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit,
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header" id="headingThre">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree">
-                Critère d'admission
-              </button>
-            </h5>
-          </div>
-          <div id="collapseThre" class="collapse"
-               aria-labelledby="headingThree"
-               data-parent="#accordion">
-            <div class="card-body">
-              Anim pariatur cliche reprehenderit,
-            </div>
-          </div>
-        </div>
+    <div class="shadow-lg mt-4 p-4 rounded-3 mb-4 ml-4 mr-4  " *ngFor="let tab of referentiels">
+      <div class="float-right">
+        <a routerLinkActive="active" routerLink="/referentiels/edit/{{tab.id}}">
+          <button class="btn btn-sm btn-outline-info float-right"
+                  data-toggle="tooltip" data-placement="top" title="Modifier">
+            <i class="fas fa-edit"></i></button></a>
+        <button  (click)="deleteById(tab.id)"
+          class="btn btn-sm btn-outline-danger float-right"
+                data-toggle="tooltip" data-placement="top" title="Supprimer">
+          <i class="fas fa-minus-circle"></i></button>
 
       </div>
+      <button mdbBtn style="background: -webkit-linear-gradient(left, #DE6262, #FFB88C);
+             color: white" class=" waves-light w-75"
+              type="button" (click)="test.toggle()" mdbWavesEffect>{{tab.libelle}}
+      </button>
+
+        <div class="" mdbCollapse #test="bs-collapse" >
+          <h2 class="card-title">Presentation:</h2>
+          <p>{{tab.presentation}}</p>
+
+          <!-- <h2 class="card-title">Programme:</h2>
+           <p><img src="{{tab.programme}}" alt=""></p>-->
+
+          <h2 class="card-title">CritereAdmission:</h2>
+          <p>{{tab.critereAdmission}}</p>
+
+          <h2 class="card-title">CritereEvaluation:</h2>
+          <p>{{tab.critereEvaluation}}</p>
+
+          <h2 class="card-title">GroupeCompetence:</h2>
+          <div class="shadow-lg p-1 mb-2 text-center" >
+            <ul class="list-group">
+              <li class="list-group-item"  *ngFor="let g of tab.groupeCompetences"> {{g.libelle}}</li>
+            </ul>
+          </div>
+
+        </div>
+
     </div>
-  </div>
 </table>

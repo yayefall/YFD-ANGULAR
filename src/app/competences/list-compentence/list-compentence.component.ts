@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GrpcompetenceService } from '../../services/grpcompetence.service';
+import { CompetenceService } from '../../services/competence.service';
 
 @Component({
   selector: 'app-list-compentenc',
@@ -6,10 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-compentence.component.scss']
 })
 export class ListCompentenceComponent implements OnInit {
+groupeCompetences: any = [];
+competences: any = [];
+niveaux: any = [];
 
-  constructor() { }
+  constructor(private grcompetenceService: GrpcompetenceService,
+              private competenceService: CompetenceService)  { }
 
   ngOnInit(): void {
+    this.grcompetenceService.getGroupCompetence().subscribe(
+
+    (response: any) => {
+    this.groupeCompetences = response;
+    console.log(this.groupeCompetences);
+
+    });
   }
 
+  chargeCompetence(select: any): any{
+    return this.competenceService.getCompetenceByGroup(select).subscribe(
+
+    (response: any) => {
+      this.competences = response;
+      console.log(this.competences);
+
+      });
+  }
+  openNiveau(index: number): any{
+    this.niveaux = [];
+    const clickedCompetence = this.competences[index];
+    for (const n of clickedCompetence.niveaux){
+      this.niveaux.push(n);
+      }
+    console.log(this.niveaux);
+  }
 }

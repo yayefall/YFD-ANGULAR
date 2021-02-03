@@ -1,46 +1,80 @@
-<div class="row  mt-5 w-75 justify-content-center shadow-lg p-3 mb-5 rounded " >
-  <form>
-    <fieldset class="">
-      <legend class="text-center">Creation de Référentiel</legend>
+<main class="login-form">
+  {{formReferentiels.value|json}}
+  <div class="container">
+<div class="row justify-content-center rounded shadow-lg mt-5 mb-5">
+<div class="  mt-5  shadow-lg  rounded">
+  <div class="card-header shadow-lg text-center"
+       style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+    Création d'un Référentiel</div>
+
+  <form [formGroup]="formReferentiels" (ngSubmit)="onSubmit()">
+
       <div class="form-group">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1"> Libelle</label>
-        <input type="email" class="form-control"
-               id="exampleInputEmail1"
-               aria-describedby="emailHelp"
-               placeholder="libelle">
+        <label for="libelle"><h2>Libelle</h2></label>
+        <input type="text"
+               class="form-control shadow-lg"
+               id="libelle"
+               required autofocus
+               title="Entrer le libelle"
+               [formControlName]="'libelle'">
       </div>
 
       <div class="form-group">
-        <label >Presentation</label><br>
-        <textarea name="presentation"  cols="60" rows="5"></textarea>
-      </div>
-      <div class="form-group">
-        <label >Competence</label>
-        <input type="text" class="form-control" id="exampleInputPassword4" placeholder="competence">
-      </div>
-      <div class="form-group">
-        <label >Programme</label>
-        <input type="file" class="form-control" id="exampleInputPassword2" placeholder="programme">
+        <label><h2>Presentation</h2></label><br>
+        <textarea class="form-control shadow-lg"
+                  name="presentation"
+                  cols="60" rows="5"
+                  title="Entrer la presentation"
+                 [formControlName]="'presentation'">
+        </textarea></div>
+      <div class="form-group ">
+        <label ><h2>GroupeCompetences</h2></label><br>
+        <angular2-multiselect class=" form-control shadow-lg "
+                              [data]="groupecompetences" [(ngModel)]="selectedItems"
+                              [settings]="dropdownSettings"
+                              [formControlName]="'groupeCompetences'" >
+        </angular2-multiselect>
+
       </div>
 
       <div class="form-group">
-        <label >Critére d'évaluation</label><br>
+        <label ><h2>Programme</h2></label>
+        <input type="file"
+               class="form-control shadow-lg"
+               id="programme"
+               name="programme"
+               placeholder="programme"
+               [formControlName]="'programme'"
+               (change)="handleFileInput($event)">
+      </div>
+
+      <div class="form-group">
+        <label ><h2>Critére d'évaluation</h2></label><br>
         <label>
-          <textarea name="evaluation"  cols="60" rows="5"></textarea>
+          <textarea class="form-control shadow-lg"
+                    title="Entrer le critere dévaluation"
+                    name="critereEvaluation"
+                    cols="60" rows="5"
+                    [formControlName]="'critereEvaluation'">
+          </textarea>
         </label>
       </div>
 
       <div class="form-group">
-        <label >Critére d'admission</label><br>
-        <textarea name="admission"  cols="60" rows="5"></textarea>
+        <label><h2>Critére d'admission</h2></label><br>
+        <textarea class="form-control shadow-lg"
+                  name="critereAdmission"
+                  title="Entrer le critere dadmission"
+                  cols="60" rows="5"
+                  [formControlName]="'critereAdmission'">
+        </textarea>
       </div>
       <div>
-        <button class="btn btn-outline-warning rounded">Soumettre</button>
+        <button class="btn btn-outline-danger rounded mb-3"
+        [disabled]="!formReferentiels.valid">Enreregistrer</button>
       </div>
-    </fieldset>
   </form>
-
 </div>
-
+</div>
+</div>
+</main>

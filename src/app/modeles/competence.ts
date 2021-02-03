@@ -4,4 +4,5 @@ export interface Competence {
   descriptif: string;
   groupecompetences: any;
   niveaux: any;
+
 }

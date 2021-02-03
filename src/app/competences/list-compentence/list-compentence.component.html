@@ -1,3 +1,154 @@
 
 
-<p>list-compentenc works!</p>
+    <div class="card-header text-center shadow-lg mt-5"
+         style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+      <h3>Liste Compétences</h3></div>
+
+    <button class="btn btn-outline-danger "
+            routerLinkActive="active"
+            routerLink="/competences/add"
+            style="margin: 1%">Creer  Competence</button>
+    <!--Section: Magazine v.1-->
+    <section class="container mb-4 mt-4 shadow-lg ">
+      <div class="container mb-5 mt-4">
+      <!-- Grid row -->
+      <div class="row  shadow-lg ">
+
+        <!-- Grid column -->
+        <div class=" col-lg-6 col-md-12 shadow-lg "style="max-width: 40rem">
+
+          <!-- Featured news -->
+          <div class="single-news mb-4 ">
+
+            <div class="form-group ml-4 ">
+              <div> <h2> Groupe Competence</h2></div>
+              <select #selectElement (change)="chargeCompetence(selectElement.value)"
+                      name="competence"
+                      id="competence" class="form-control shadow-lg ">
+                <option  *ngFor="let item of groupeCompetences" value="{{item.id}}">{{item.libelle}}</option>
+
+              </select>
+              <div class="card mt-4 shadow-none" >
+              <button class="btn btn-outline-danger m-2  rounded"
+                      (click)="openNiveau(i)"
+                      *ngFor="let item of competences; let i = index"> {{item.libelle}}</button></div>
+            </div>
+
+          </div>
+          <!-- Featured news -->
+
+        </div>
+        <!--*******************************Grid column ******************-->
+
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 ">
+
+          <!-- Featured news -->
+          <div class="single-news mb-4">
+
+
+      <div class="form-group">
+        <div class="shadow-lg">
+          <div class="card  shadow-lg mb-3 " style="max-width: 50rem;">
+            <div class="card-body">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" >
+                  <li class="nav-item" >
+                    <a class="nav-link active"
+                       id="pills-home-tab"
+                       data-toggle="pill" href="#pills-home"
+                       role="tab" aria-controls="pills-home"
+                       aria-selected="true">Niveau1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-profile-tab"
+                       data-toggle="pill" href="#pills-profile"
+                       role="tab" aria-controls="pills-profile"
+                       aria-selected="false">Niveau2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-contact-tab"
+                       data-toggle="pill" href="#pills-contact"
+                       role="tab" aria-controls="pills-contact"
+                       aria-selected="false">Niveau3</a>
+                  </li>
+                </ul>
+                <div class="tab-content " id="pills-tabContent" *ngIf="niveaux.length">
+                  <div class="tab-pane fade show active"
+                       id="pills-home"
+                       role="tabpanel"
+                       aria-labelledby="pills-home-tab">
+                    <div class="row">
+                      <div class=" card col-6 border">
+                        <div class="card-title text-danger">
+                         <h2> Groupe daction à réaliser </h2>
+                        </div>
+                        <p>{{niveaux[0].groupeDaction}}</p>
+                      </div>
+                      <div class="col-6 border">
+                        <div class="card-title text-danger">
+                          <h2> Critére d'evaluation </h2>
+                        </div>
+                        <p>{{niveaux[0].critereEvaluation}}</p>
+                      </div>
+                    </div></div><!-- fin tab 1 -->
+
+                  <div class="tab-pane fade"
+                       id="pills-profile"
+                       role="tabpanel"
+                       aria-labelledby="pills-profile-tab">
+                    <div class="row">
+                      <div class=" card col-6 border">
+                        <div class="card-title text-danger">
+                          <h2> Groupe daction à réaliser </h2>
+                        </div>
+                        <p>{{niveaux[1].groupeDaction}}</p>
+                      </div>
+                      <div class="card col-6 border">
+                        <div class="card-title text-danger">
+                          <h2> Critére d'evaluation </h2>
+                        </div>
+                        <p>{{niveaux[1].critereEvaluation}}</p>
+                      </div>
+                  </div></div><!-- fin tab 2 -->
+
+                  <div class="tab-pane fade"
+                       id="pills-contact" role="tabpanel"
+                       aria-labelledby="pills-contact-tab">
+                    <div class="row">
+                    <div class="card col-6 border">
+                      <div class="card-title text-danger">
+                        <h2> Groupe daction à réaliser </h2>
+                      </div>
+                      <p>{{niveaux[2].groupeDaction}}</p>
+                    </div>
+                    <div class="card col-6 border">
+                      <div class="card-title text-danger">
+                       <h2> Critére d'evaluation </h2>
+                      </div>
+                      <p>{{niveaux[2].critereEvaluation}}</p>
+                    </div>
+                  </div></div> <!-- fin tab 3 -->
+
+                </div>
+              <!-- fin tab-containt -->
+
+            </div>
+            <!-- fin card body -->
+          </div> <!-- fin card niveaux -->
+        </div>
+        <!-- fin shadow-lg -->
+      </div><!-- fin form group -->
+          </div>
+          <!-- Featured news -->
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+      </div> <!-- Grid container -->
+    </section>
+    <!--/Section: Magazine v.1-->

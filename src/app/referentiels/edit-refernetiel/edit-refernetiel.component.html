@@ -1,1 +1,61 @@
-<p>edit-refernetiel works!</p>
+<div class="row  mt-5 w-75 justify-content-center shadow-lg p-3 mb-5 rounded " >
+  <form [formGroup]="formReferentiels" (ngSubmit)="onSubmit()">
+    <fieldset class="">
+      <legend class="text-center">Creation de Référentiel</legend>
+      <div class="form-group">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"> Libelle</label>
+        <input type="email" class="form-control"
+               id="exampleInputEmail1"
+               aria-describedby="emailHelp"
+               placeholder="libelle"
+               [formControlName]="'libelle'"
+                required autofocus>
+      </div>
+
+      <div class="form-group">
+        <label >Presentation</label><br>
+        <textarea name="presentation"
+                  cols="60" rows="5"
+                  [formControlName]="'presentation'"></textarea>
+      </div>
+      <div class="form-group">
+        <label >GroupeCompetence</label>
+        <input type="text" class="form-control"
+               id="groupecompetences"
+               name="groupeCompetences"
+               placeholder="groupecompetences"
+               [formControlName]="'groupecompetences'">
+      </div>
+      <div class="form-group">
+        <label >Programme</label>
+        <input type="file" class="form-control"
+               id="programme"
+               placeholder="programme"
+                [formControlName]="'programme'" >
+      </div>
+
+      <div class="form-group">
+        <label >Critére d'évaluation</label><br>
+        <label>
+          <textarea name="critereEvaluation"
+                    cols="60" rows="5"
+          [formControlName]="'critereEvaluation'"></textarea>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label >Critére d'admission</label><br>
+        <textarea name="critereAdmission"
+                  cols="60" rows="5"
+        [formControlName]="'critereAdmission'"></textarea>
+      </div>
+      <div>
+        <button class="btn btn-outline-warning rounded">Soumettre</button>
+      </div>
+    </fieldset>
+  </form>
+
+</div>
+

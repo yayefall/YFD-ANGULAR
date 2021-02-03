@@ -30,8 +30,7 @@ export class AddUserComponent implements OnInit {
 
   });
 
-  // tslint:disable-next-line:typedef
-  handleFileInput(e: any) {
+  handleFileInput(e: any): any {
     this.fileToUpload = e.target.files[0];
     console.log( this.formdata.controls.profils.value);
   }
@@ -45,8 +44,8 @@ export class AddUserComponent implements OnInit {
       }
     );
   }
-  // tslint:disable-next-line:typedef
-  onSubmit(){
+
+  onSubmit(): any{
     const formData = new FormData();
     formData.append('nom', this.formdata.get('nom')?.value);
     formData.append('prenom', this.formdata.get('prenom')?.value);

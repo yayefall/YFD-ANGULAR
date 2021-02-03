@@ -52,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AccueilComponent } from './accueil/accueil.component';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {ButtonsModule, CollapseModule, WavesModule} from 'angular-bootstrap-md';
+import {ButtonsModule, CollapseModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
+import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
 
 
 
@@ -113,7 +114,9 @@ import {ButtonsModule, CollapseModule, WavesModule} from 'angular-bootstrap-md';
     MatGridListModule,
     CollapseModule,
     WavesModule,
-    ButtonsModule
+    ButtonsModule,
+    AngularMultiSelectModule,
+    MDBBootstrapModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

@@ -1,65 +1,175 @@
 
 
-<div class="row  mt-5 w-75 justify-content-center shadow-lg p-3 mb-5 rounded " >
-  <form>
-    <fieldset class="">
-      <legend class="text-center">Creation de Competence</legend>
-      <div class="form-group">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1"> Groupe Competence</label><br>
-        <select name="competence" id="competence" class="form-control">
-          <option value="1">Développer le back-end d'une application</option>
-          <option value="2">Développer une application web</option>
-          <option value="3">Développer le front-end d'une application</option>
-        </select>
-      </div>
+<div class="card-header text-center shadow-lg mt-5"
+     style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+  <h3>Creation Compétence</h3></div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1"> Libelle</label><br>
-        <input type="email" class="form-control"
-               id="exampleInputEmail1"
-               aria-describedby="emailHelp"
-               placeholder="libelle">
-      </div>
+{{formCompetence.value | json}}
+<!-- Grid container -->
+<div class="container  ">
+<div class="row  justify-content-center rounded shadow-lg mt-5 mb-5">
+  <form [formGroup]="formCompetence" (ngSubmit)="onSubmit()">
+    <div class=" card-body mt-5  shadow-lg  rounded">
+    <div class="form-group row">
+      <label  class="col-md-2 col-form-label text-md-right"><h2>Groupe Competence</h2></label>
+      <div class="col-md-12">
 
-      <div class="form-group">
-        <div class="card row">
-          <div class="card text-white  mb-3 " style="max-width: 30rem;">
-            <div class="card-body">
-              <div class="card-header mt-5">
-                <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <button class="nav-link  btn btn-outline-warning rounded" data-toggle="tab" href="#niveau1">niveau1</button>
-                  </li>
-                  <li class="nav-item">
-                    <button class="nav-link btn btn-outline-warning rounded"  data-toggle="tab"  href="#niveau2">niveau2</button>
-                  </li>
-                  <li class="nav-item">
-                    <button class="nav-link active btn btn-outline-warning rounded" data-toggle="tab"  href="#niveau3">niveau3</button>
-                  </li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                  <div class="tab-pane fade show active " >
-                    <textarea name=""  cols="30" rows="3"></textarea></div></div>
 
-                <div class="tab-pane fade" id="profile">
-                  <div class="tab-pane fade " >
-                    <textarea name=""  cols="30" rows="3"></textarea></div></div>
+        <angular2-multiselect class=" form-control shadow-lg col-md-12"
+                              [data]="groupeCompetences" [(ngModel)]="selectedItems"
+                              [settings]="dropdownSettings"
+                              [formControlName]="'groupecompetences'" >
+        </angular2-multiselect></div></div>
+    <div class="form-group row">
+      <label  class="col-md-2 col-form-label text-md-right"><h2>Libelle</h2></label>
+      <div class="col-md-12">
+        <input type="text"
+               id="libelle"
+               class="form-control shadow-lg"
+               name="libelle"
+               required autofocus
+               placeholder="libelle"
+               [formControlName]="'libelle'"></div></div>
+      <div class="form-group row">
+        <label  class="col-md-2 col-form-label text-md-right"><h2>Descriptif</h2></label>
+        <div class="col-md-12">
+           <textarea class="form-control shadow-lg col-md-12 col-form-label text-md-right"
+                     id="descriptif"
+                     rows="3"
+                     name="descriptif"
+                     [formControlName]="'descriptif'"></textarea></div></div>
+      <!-- **********************************************************************-->
+      <div
+        [formArrayName]="'niveaux'"
+        *ngFor="let niveau of getNiveauxFormGroups().controls; let i = index;">
+        <div class="card card-body shadow-lg">
+        <div [formGroupName]="i">
+          <label><h2>Niveau {{i+1}}</h2></label>
+          <input class="form-control shadow-lg" [formControlName]="'libelle'" placeholder="libelle">
+          <input  class="form-control mt-2 shadow-lg" [formControlName]="'groupeDaction'" placeholder="GroupeDaction">
+          <input class="form-control mt-2 shadow-lg" [formControlName]="'critereEvaluation'" placeholder="CritereEvaluation">
+        </div></div>
+        </div>
 
-                <div class="tab-pane fade" id="profiles">
-                  <div class="tab-pane fade " >
-                    <textarea name=""  cols="30" rows="3"></textarea></div></div>
-
+      <!-- <div class="form-group ">
+        <div class="card card-body" style="max-width: 40rem;">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active"
+               id="pills-home-tab"
+               data-toggle="pill" href="#pills-home"
+               role="tab" aria-controls="pills-home"
+               aria-selected="true">Niveau1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab"
+               data-toggle="pill" href="#pills-profile"
+               role="tab" aria-controls="pills-profile"
+               aria-selected="false">Niveau2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-contact-tab"
+               data-toggle="pill" href="#pills-contact"
+               role="tab" aria-controls="pills-contact"
+               aria-selected="false">Niveau3</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active"
+               id="pills-home"
+               role="tabpanel"
+               aria-labelledby="pills-home-tab"><div class="row">
+            <div class=" card col-10 border">
+              <label>Libelle</label>
+              <input type="text"
+                     class="form-control shadow-lg"
+                     name="libelle"
+                     required autofocus
+                     >
+              <div class=" ">
+                <label>Groupe d'action1</label>
+                <input type="text"
+                       class="form-control shadow-lg"
+                       name="groupeDaction"
+                       required autofocus
+                      >
+              </div>
+              <div class=" ">
+                <label>Critere d'évaluation1</label>
+                <input type="text"
+                       class="form-control shadow-lg"
+                       name="critereEvaluation"
+                       required autofocus
+                       >
               </div>
             </div>
+
+          </div></div> Grid nivaux1
+
+        <div class="tab-pane fade"
+             id="pills-profile"
+             role="tabpanel"
+             aria-labelledby="pills-profile-tab">
+          <div class="row">
+            <div class=" card col-10 border">
+              <label>Libelle</label>
+              <input type="text"
+                     class="form-control shadow-lg"
+                     name="libelle"
+                     required autofocus
+                     >
+              <div class=" ">
+                <label>Groupe d'action1</label>
+                <input type="text"
+                       class="form-control shadow-lg"
+                       name="groupeDaction"
+                       required autofocus
+                       >
+              </div>
+              <div class=" ">
+                <label>Critere d'évaluation1</label>
+                <input type="text"
+                       class="form-control shadow-lg"
+                       name="critereEvaluation"
+                       required autofocus
+                       >
+              </div>
+            </div>
+
+          </div></div> Grid nivaux1
+
+        <div class="tab-pane fade"
+             id="pills-contact"
+             role="tabpanel"
+             aria-labelledby="pills-contact-tab"><div class="row">
+          <div class=" card col-6 border">
+            <div class="col-md-12">
+              <label><h2>Groupe d'action3</h2></label>
+              <input type="text"
+                     class="form-control shadow-lg"
+                     name="groupeDaction"
+                     required autofocus
+                    >
+            </div>
           </div>
-        </div>
+          <div class="col-6 border">
+            <div class="col-md-12">
+              <label><h2>Critere d'évaluation3</h2></label>
+              <input type="text"
+                     class="form-control shadow-lg"
+                     name="critereEvaluation"
+                     required autofocus
+                     >
+            </div>
+          </div>
+        </div></div>
       </div>
-      <div><button class="btn btn-outline-warning rounded">Soumettre</button></div>
-    </fieldset>
+      </div> Grid card
+    </div> Grid form groupe pour les niveaux -->
+    </div> <!-- card-body border -->
+    <div class="form-group mt-4">
+      <button class="btn btn-outline-danger" [disabled]="!formCompetence.valid">Enregistrer</button>
+    </div>
   </form>
-
-</div>
-
-
+</div><!-- Grid row -->
+</div> <!-- Grid container -->
