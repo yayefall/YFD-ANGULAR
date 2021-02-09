@@ -16,15 +16,15 @@ formProfilsortie = this.formbuilder.group({
 
   ngOnInit(): void {
   }
-// tslint:disable-next-line:typedef
-onSubmit(){
+
+onSubmit(): any{
     this.profisortiService.postProfilsorties(this.formProfilsortie.value).subscribe(
-      (data) => {
+      (data: any) => {
         console.log(data);
         alert('insertion successefull');
       },
-      error => {
-        alert('erreur');
+      (error: any) => {
+        alert('erreur laay doone');
       });
 }
 }

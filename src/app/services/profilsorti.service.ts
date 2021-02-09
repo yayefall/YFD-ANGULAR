@@ -18,18 +18,18 @@ export class ProfilsortiService {
   getProfilsortie(): Observable<Profilsorties[]> {
     return this.http.get<Profilsorties[]>(`${environment.apiUrl}/admin/profilsorties?archivage=0`);
   }
-  // tslint:disable-next-line:typedef
-  postProfilsorties(body: any){
+
+  postProfilsorties(body: any): any{
     return this.http.post(`${environment.apiUrl}/admin/profilsorties`,
       body, { headers : this.headerJson} );
   }
+
   putProfilsorties(body: any, id: number): any{
     return this.http.put(`${environment.apiUrl}/admin/profilsorties/` + id,
       body, { headers : this.headerJson});
   }
 
-  // tslint:disable-next-line:typedef
-  getProfilsortieById(id: any){
+  getProfilsortieById(id: any): any{
     return this.http.get (`${environment.apiUrl}/admin/profilsorties/` + id);
   }
   deleteProfilsorties(id: any): any{

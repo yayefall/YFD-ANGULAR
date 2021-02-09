@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
 import {ProfilService} from '../../services/profil.service';
 
+
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -15,8 +16,8 @@ export class AddUserComponent implements OnInit {
               private profilService: ProfilService) { }
   // @ts-ignore
   fileToUpload: File ;
-  image: any;
   profils: any;
+  url = '';
 
   formdata = this.formbuilder.group({
     nom: ['', [Validators.required]],
@@ -31,11 +32,21 @@ export class AddUserComponent implements OnInit {
   });
 
   handleFileInput(e: any): any {
-    this.fileToUpload = e.target.files[0];
-    console.log( this.formdata.controls.profils.value);
+    if (e.target.files && e.target.files[0]) {
+      this.fileToUpload = e.target.files[0];
+      console.log( this.formdata.controls.profils.value);
+      // tslint:disable-next-line:prefer-const
+      let reader = new FileReader();
+
+      reader.readAsDataURL(e.target.files[0]); // read file as data url
+
+      reader.onload = (event: any) => { // called once readAsDataURL is completed
+        console.log(event);
+        this.url = event.target.result;
+        console.log(this.url);
+      };
+    }
   }
-
-
   ngOnInit(): void {
     this.profilService.getProfils().subscribe(
       reponse  => {

@@ -12,6 +12,7 @@ export class ListRefernetielComponent implements OnInit, AfterViewInit {
   constructor( private referentielService: ReferentielService) { }
   groupeCompetences: any;
   referentiels: any;
+  p = 1;
   // @ts-ignore
   @ViewChildren(CollapseComponent) collapses: CollapseComponent[];
   ngAfterViewInit(): any {

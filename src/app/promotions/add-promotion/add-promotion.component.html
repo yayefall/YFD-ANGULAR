@@ -1,15 +1,19 @@
 
+<div class="container ">
+  {{formPromo.value|json}}
+  <div class="container">
+    <div class="row justify-content-center w-75 rounded shadow-lg mt-5  col-lg-auto" >
+      <div class="mt-5  shadow-lg  rounded">
 
+    <div class="card-header shadow-lg text-center"
+         style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+      Création d'une Promotion</div>
 
-
-<div class="row  mt-5 w-75 justify-content-center shadow-lg p-3 mb-5 rounded " >
-  <form>
-    <fieldset class="">
-      <legend class="text-center">Creation d'une promotion</legend>
-      <div class="form-group">
+    <form [formGroup]="formPromo" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="exampleSelect1">Choisir une langue</label>
-          <select class="form-control" id="exampleSelect2">
+          <label>Choisir une langue</label>
+          <select class="form-control"
+                  [formControlName]="'langue'">>
             <option>Français</option>
             <option>chinois</option>
             <option>Anglais</option>
@@ -18,47 +22,62 @@
           </select>
         </div>
 
+      <div class="form-group">
+        <label for="titre"><h2>titre</h2></label>
+        <input type="text"
+               class="form-control shadow-lg"
+               id="titre"
+               required autofocus
+               title="Entrer le titre"
+               [formControlName]="'titre'">
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1"> Titre</label>
-        <input type="email" class="form-control"
-               id="exampleInputEmail1"
-               aria-describedby="emailHelp"
-               placeholder="titre">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label ><h2>Description de promotion</h2></label>
+        <input type="text"
+               class="form-control shadow-lg"
+               placeholder="Description"
+               title="Entrer le titre"
+               [formControlName]="'description'">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Description de promotion</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+        <label >Lieu de Promotion</label>
+        <input type="text"
+               class="form-control shadow-lg"
+               placeholder="lieu"
+               title="Entrer le lieu"
+               [formControlName]="'lieu'">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Lieu de Promotion</label>
-        <input type="text" class="form-control" id="exampleInputPassword4" placeholder="">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Reference Agate</label>
-        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+        <label >Reference Agate</label>
+        <input type="text"
+               class="form-control shadow-lg"
+               placeholder="Reference Agate"
+               title="Entrer le reference Agate"
+               [formControlName]="'referenceAgate'">
       </div>
 
-      <div class="form-group">
-        <label for="exampleSelect1"> Choix de la fabrique</label>
-        <select class="form-control" id="exampleSelect1">
+      <div class="form-group ">
+        <label > Choix de la fabrique</label>
+        <select class="form-control" [formControlName]="'fabrique'">
           <option>Sonatel accademy</option>
           <option>Sonatel</option>
           <option>Accademy</option>
         </select>
       </div>
-      <div class="row ">
+      <div class="">
         <div class="form-group">
-          <label for="exampleInputPassword1">Date debut </label>
-          <input type="date" class="form-control"
-                 id="exampleInputPasswor"
-                 placeholder="Password"></div>
+          <label>Date debut </label>
+          <input type="date"
+                 class="form-control shadow-lg"
+                 placeholder="Date debut"
+                 [formControlName]="'dateDebut'"></div>
         <div class="form-group ml-3">
-          <label for="exampleInputPassword1">Date fin</label>
-          <input type="date" class="form-control"
-                 id="exampleInputPasswor1"
-                 placeholder="Password"></div></div>
+          <label>Date fin</label>
+          <input type="date"
+                 class="form-control shadow-lg"
+                 placeholder="Date fin"
+                 [formControlName]="'dateFin'"></div>
+      </div>
 
       <div class="accordion col-md-12 p-2" id="myAccordion">
         <div class="card">
@@ -70,35 +89,31 @@
                       data-target="#collapseOne">Referentiels</button></h2></div>
 
           <div class="row text-center float-right">
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#myAccordion">
+            <div id="collapseOne" class="collapse"
+                     aria-labelledby="headingOne"
+                     data-parent="#myAccordion">
               <div class="card-body">
-                <button class="tablinks col-md-2 p-2 bg-warning">Realiser un site internet a partir de Wordpresse</button>
-                <button class="tablinks col-md-2 p-2 bg-warning " >Methode d'agile gestion et amorsage d'un projet</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Developpeur-se data et intelligence artificiel</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Technique supperieur de systeme et reseaux</button>
-                <button class="tablinks col-md-2 p-2 bg-warning">Coder et deployer une application simple</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Competence numeriques fondementale</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Technique d'assistance informatique</button>
-                <button class="tablinks col-md-2 p-2 bg-warning">Developpeur-se Web et Mobil</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >analiste sybersecurité</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Objet connectés</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Developpeur-se data</button>
-                <button class="tablinks col-md-2 p-2 bg-warning" >Referent-e digital</button>
+                <button class="tablinks col-md-12 p-2 bg-warning"
+                        [formControlName]="'referentiels'"
+                *ngFor="let item of referentiels">{{item.libelle}}</button>
+
               </div>
 
             </div>
           </div>
         </div>
       </div>
+      <div><input type="file" name="file"
+                  [formControlName]="'file'"
+                  class="form-control shadow-lg"></div>
+      <div><button class="btn btn-outline-danger  rounded mt-3 mb-3"
+                   [disabled]="!formPromo.valid">Enregistrer</button></div>
 
-      <div><input type="file"> </div>
-      <div><button class="btn btn-outline-warning  rounded mt-5">Soumettre</button></div>
-
-    </fieldset>
-  </form>
-</div>
-
-
+       </form>
+      </div>
+     </div>
+    </div>
+  </div>
 
 
 

@@ -6,7 +6,7 @@
         style="margin: 1%">Creer Référentiels</button>
 <table class="table mt-5 shadow-lg p-3  bg-white rounded w-90 ">
 
-    <div class="shadow-lg mt-4 p-4 rounded-3 mb-4 ml-4 mr-4  " *ngFor="let tab of referentiels">
+    <div class="shadow-lg mt-4 p-4 rounded-3 mb-4 ml-4 mr-4  " *ngFor="let tab of referentiels | paginate: { itemsPerPage: 3, currentPage: p }">
       <div class="float-right">
         <a routerLinkActive="active" routerLink="/referentiels/edit/{{tab.id}}">
           <button class="btn btn-sm btn-outline-info float-right"
@@ -47,3 +47,4 @@
 
     </div>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

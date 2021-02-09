@@ -18,9 +18,9 @@
         <div class=" col-lg-6 col-md-12 shadow-lg "style="max-width: 40rem">
 
           <!-- Featured news -->
-          <div class="single-news mb-4 ">
+          <div class="single-news mb-4">
 
-            <div class="form-group ml-4 ">
+            <div class="form-group ml-4">
               <div> <h2> Groupe Competence</h2></div>
               <select #selectElement (change)="chargeCompetence(selectElement.value)"
                       name="competence"
@@ -31,9 +31,17 @@
               <div class="card mt-4 shadow-none" >
               <button class="btn btn-outline-danger m-2  rounded"
                       (click)="openNiveau(i)"
-                      *ngFor="let item of competences; let i = index"> {{item.libelle}}</button></div>
-            </div>
+                      *ngFor="let item of competences | paginate: { itemsPerPage: 2, currentPage: p }; let i = index"> {{item.libelle}}
 
+                <i (click)="deleteById(item.id)" class="fas fa-minus-circle float-right" title="Supprimer"></i>
+                <a routerLinkActive="active" routerLink="/competences/edit/{{item.id}}">
+                  <i class="fas fa-edit float-right" title="Modifier"></i></a>
+
+              </button>
+              </div>
+
+            </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
           <!-- Featured news -->
 

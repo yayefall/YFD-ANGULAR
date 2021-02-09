@@ -22,6 +22,7 @@ export class EditUserComponent implements OnInit {
   photo: any;
   // @ts-ignore
   fileToUpload: File ;
+  url = '';
 
   formdata = this.formbuilder.group({
     nom: ['', [Validators.required]],
@@ -35,10 +36,21 @@ export class EditUserComponent implements OnInit {
 
   });
 
-  // tslint:disable-next-line:typedef
-  handleFileInput(e: any) {
-    this.fileToUpload = e.target.files[0];
-   // console.log( this.formdata.controls.users.value);
+  handleFileInput(e: any): any {
+    if (e.target.files && e.target.files[0]) {
+      this.fileToUpload = e.target.files[0];
+      console.log( this.formdata.controls.profils.value);
+      // tslint:disable-next-line:prefer-const
+      let reader = new FileReader();
+
+      reader.readAsDataURL(e.target.files[0]); // read file as data url
+
+      reader.onload = (event: any) => { // called once readAsDataURL is completed
+        console.log(event);
+        this.url = event.target.result;
+        console.log(this.url);
+      };
+    }
   }
 
   ngOnInit(): void {

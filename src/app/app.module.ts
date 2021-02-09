@@ -54,6 +54,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {ButtonsModule, CollapseModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
 import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -117,6 +118,8 @@ import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
     ButtonsModule,
     AngularMultiSelectModule,
     MDBBootstrapModule,
+    NgxPaginationModule
+
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

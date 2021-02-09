@@ -4,7 +4,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <div style="margin: 5%">
-  <div class="container register">
+  <div class="container shadow-lg register">
     <div class="row">
       <div class="col-md-3 register-left">
         <p>Coding For Your Better Live YFD!</p>
@@ -16,23 +16,26 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home"
                  role="tabpanel" aria-labelledby="home-tab">
-              <h3 class="register-heading">Modification d'un user</h3>
-              <div class="row register-form">
-                <div class="col-md-6">
-                  <div class="form-group " style="width: 40%; height: 20%; background: -webkit-linear-gradient(left , #DE6262, #FFB88C);border-radius: 50%">
-                    <img  src="" alt="">
+              <div class="card-header text-center shadow-lg"
+                   style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+                Modification d'un Utilisateur</div>
+              <div class="">
+                <div class=" col-md-12 mt-5 mb-3" >
+                  <div class="" >
+                    <img src="{{url}}" alt="" style="width: 30%; border-radius: 50%;">
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-10">
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text"
                            name="nom"
                            id="nom"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder="Nom*"
-                           value=""
+                           title="Entre votre nom"
+                           autofocus
                            [formControlName]="'nom'">
                   </div>
                   <div class="form-group">
@@ -40,9 +43,9 @@
                     <input type="text"
                            name="prenom"
                            id="prenom"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder="Prenom *"
-                           value=""
+                           title="Entre votre Prenom"
                            [formControlName]="'prenom'">
                   </div>
 
@@ -51,9 +54,9 @@
                     <input type="text"
                            id="username"
                            name="telephone"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder= " username *"
-                           value=""
+                           title="Entre votre username"
                            [formControlName]="'username'">
                   </div>
 
@@ -63,9 +66,9 @@
                     <input type="email"
                            id="email"
                            name="email"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder= " Email *"
-                           value=""
+                           title="Entre votre email"
                            [formControlName]="'email'">
                   </div>
 
@@ -74,15 +77,15 @@
                     <input type="text"
                            id="telephone"
                            name="telephone"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder= " telephone *"
-                           value=""
+                           title="Entre votre telephone"
                            [formControlName]="'telephone'">
                   </div>
 
                   <div class="form-group">
                     <div class="maxl">
-                      <label >Genre</label><br>
+                      <label >Gender</label><br>
                       <label class="radio inline">
                         <input type="radio" name="gender" value="homme"[formControlName]="'gender'" >
                         <span> Homme </span>
@@ -96,8 +99,8 @@
 
                   <div class="form-group">
                     <label >Profils</label>
-                    <select class=" form-control form-select" name="profils" id="idProfil" [formControlName]="'profils'">
-                      <option *ngFor="let p of profils" value="/api/admin/profils/{{p.id}}">{{p.libelle}}</option>
+                    <select class=" form-control shadow-lg form-select"[formControlName]="'profils'">
+                      <option *ngFor="let p of profils" value="api/admin/profils/{{p.id}}">{{p.libelle}}</option>
                     </select>
                   </div>
 
@@ -105,16 +108,15 @@
                     <input type="file"
                            name="photo"
                            id="photo"
-                           class="form-control"
+                           class="form-control shadow-lg"
                            placeholder="choisir un ficher *"
                            value=""
                            [formControlName]="'photo'"
                            (change)="handleFileInput($event)">
-
                   </div>
                   <input type="submit" class="btn btn-warning"
                          style="background: #FFB88C"
-                         value="Modifier">
+                         value="Enregistrer">
                 </div>
               </div>
 

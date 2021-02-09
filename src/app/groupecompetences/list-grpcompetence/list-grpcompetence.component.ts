@@ -11,7 +11,7 @@ export class ListGrpcompetenceComponent implements OnInit, AfterViewInit{
 
   constructor(private grpcompetenceService: GrpcompetenceService) { }
   tabs: any ;
-
+  p = 1;
   // @ts-ignore
   @ViewChildren(CollapseComponent) collapses: CollapseComponent[];
   ngAfterViewInit(): any {

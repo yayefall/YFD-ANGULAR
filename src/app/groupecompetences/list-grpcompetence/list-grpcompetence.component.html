@@ -7,12 +7,14 @@
 
 <table class="table mt-3 shadow-lg p-3  bg-white rounded w-90 " >
 
-    <div class="shadow-lg p-4  rounded-3 mb-4 ml-4 mr-4 mt-4"  *ngFor="let g of tabs">
+    <div class="shadow-lg p-4  rounded-3 mb-4 ml-4 mr-4 mt-4"  *ngFor="let g of tabs | paginate: { itemsPerPage: 4, currentPage: p }">
+
 
      <button mdbBtn style="background: -webkit-linear-gradient(left, #DE6262, #FFB88C);
              color: white" class=" waves-light w-75"
              type="button" (click)="test.toggle()" mdbWavesEffect>{{g.libelle}}
      </button>
+
       <div class="float-right">
         <a routerLinkActive="active" routerLink="/groupecompetences/edit/{{g.id}}">
           <button class="btn btn-sm btn-outline-danger float-right"
@@ -40,4 +42,4 @@
    </div>
 
 </table>
-
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
