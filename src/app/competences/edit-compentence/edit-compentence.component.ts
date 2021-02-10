@@ -19,7 +19,6 @@ export class EditCompentenceComponent implements OnInit {
   formCompetence = this.formbuilder.group({
     libelle: ['', [Validators.required]],
     descriptif: ['', [Validators.required]],
-    groupecompetences: [[], [Validators.required]],
     niveaux: this.formbuilder.array([this.createNiveau()])
   });
 
@@ -33,7 +32,7 @@ export class EditCompentenceComponent implements OnInit {
 
   ngOnInit(): void {
     this.addNiveau();
-    this.grcompetenceService.getGroupCompetence().subscribe(
+    /*this.grcompetenceService.getGroupCompetence().subscribe(
       (response: any) => {
         this.groupeCompetences = response;
         console.log(this.groupeCompetences);
@@ -49,13 +48,16 @@ export class EditCompentenceComponent implements OnInit {
       unSelectAllText: 'UnSelect All',
       enableSearchFilter: true,
       classes: 'myclass custom-class'
-    };
+    };*/
 
-    this.id = this.route.snapshot.paramMap.get('id'); // recupere la valeur de l'id
+    // @ts-ignore
+    this.id = +this.route.snapshot.paramMap.get('id'); // recupere la valeur de l'id
     this.competenceService.getCompetenceById(this.id).subscribe(
       (data: any) => {
-      this.Competence = data;
-      const libelle = document.getElementById('libelle');
+        this.Competence = data;
+        this.formCompetence.patchValue(data);
+
+    /*  const libelle = document.getElementById('libelle');
       const descriptif = document.getElementById('descriptif');
       const groupecompetences = document.getElementById('groupecompetences[]');
       const niveaux = document.getElementById('niveaux[]');
@@ -66,7 +68,7 @@ export class EditCompentenceComponent implements OnInit {
         // @ts-ignore
       groupecompetences.value = this.Competence.groupecompetences;
         // @ts-ignore
-      niveaux.value = this.Competence.niveaux;
+      niveaux.value = this.Competence.niveaux;*/
     });
   }
 
@@ -83,6 +85,7 @@ export class EditCompentenceComponent implements OnInit {
     return (this.formCompetence.get('niveaux') as FormArray);
   }
   onSubmit(): any{
+    console.log(this.id);
     this.competenceService.putCompetence(this.formCompetence.value, this.id).subscribe(
       (data: any) => {
         console.log(data);

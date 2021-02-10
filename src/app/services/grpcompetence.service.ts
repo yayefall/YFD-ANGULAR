@@ -21,8 +21,8 @@ export class GrpcompetenceService {
   body, { headers : this.headerJson});
   }
 
-  putGroupeCompetence(id: number, body: any): any {
-    return this.http.put(`${environment.apiUrl}/admin/groupe_competences/` + id,
+  putGroupeCompetence(body: any, id: number): any {
+    return this.http.put(`${environment.apiUrl}/admin/groupe_competences/${id}`,
       body, {headers: this.headerJson});
   }
   getGrpCompetenceById(id: any): any {

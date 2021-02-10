@@ -20,13 +20,14 @@
                   cols="60" rows="5"
                   [formControlName]="'presentation'"></textarea>
       </div>
-      <div class="form-group">
-        <label >GroupeCompetence</label>
-        <input type="text" class="form-control"
-               id="groupecompetences"
-               name="groupeCompetences"
-               placeholder="groupecompetences"
-               [formControlName]="'groupecompetences'">
+      <div class="form-group ">
+        <label ><h2>GroupeCompetences</h2></label><br>
+        <angular2-multiselect class=" form-control shadow-lg "
+                              [data]="groupecompetences" [(ngModel)]="selectedItems"
+                              [settings]="dropdownSettings"
+                              [formControlName]="'groupeCompetences'" >
+        </angular2-multiselect>
+
       </div>
       <div class="form-group">
         <label >Programme</label>

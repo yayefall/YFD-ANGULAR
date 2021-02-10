@@ -11,7 +11,7 @@ import {CompetenceService} from '../../services/competence.service';
 })
 export class EditGrpcompetenceComponent implements OnInit {
   competences: any = [];
-  selectedItems = [];
+  selectedItems: any = [];
   dropdownSettings: any = {};
 
   formGrouCompetence = this.formbuilder.group({
@@ -49,16 +49,7 @@ export class EditGrpcompetenceComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id'); // recupere la valeur de l'id
     this.grpcompetenceService.getGrpCompetenceById(this.id).subscribe(
       (data: any) => {
-        this.GroupeCompetence = data;
-        const libelle = document.getElementById('libelle');
-        const descriptif = document.getElementById('descriptif');
-        const competences = document.getElementById('competences');
-        // @ts-ignore
-        libelle.value = this.GroupeCompetence.libelle;
-        // @ts-ignore
-        descriptif.value = this.GroupeCompetence.descriptif;
-        // @ts-ignore
-        competences.value = this.GroupeCompetence.competences;
+        this.formGrouCompetence.patchValue(data);
       });
 
   }

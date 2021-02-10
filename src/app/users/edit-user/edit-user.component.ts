@@ -64,7 +64,9 @@ export class EditUserComponent implements OnInit {
    this.id = this.route.snapshot.paramMap.get('id'); // il permet recuperer la valeur de l'id
    this.userService.getUsersById(this.id).subscribe(
       (data) => {
-        this.users = data;
+        this.formdata.patchValue(data);
+
+       /* this.users = data;
         const nom = document.getElementById('nom');
         const prenom = document.getElementById('prenom');
         const username = document.getElementById('username');
@@ -88,7 +90,7 @@ export class EditUserComponent implements OnInit {
         // @ts-ignore
         profils.value = this.users.profils;
         // @ts-ignore
-        photo.value = this.users.photo;
+        photo.value = this.users.photo;*/
       });
   }
 

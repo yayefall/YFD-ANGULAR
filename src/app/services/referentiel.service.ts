@@ -22,7 +22,7 @@ export class ReferentielService {
       body, { headers : this.headerFormData});
   }
 
-  putReferentiel(id: number, body: any): any {
+  putReferentiel(body: any, id: number): any {
     return this.http.put(`${environment.apiUrl}/admin/referentiels/` + id,
       body, {headers: this.headerFormData});
   }

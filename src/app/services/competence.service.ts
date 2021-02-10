@@ -23,7 +23,7 @@ export class CompetenceService {
       body, { headers : this.headerJson});
   }
 
-  putCompetence(id: number, body: any): any {
+  putCompetence( body: any, id: number): any {
     return this.http.put(`${environment.apiUrl}/admin/competences/` + id,
       body, {headers: this.headerJson});
   }

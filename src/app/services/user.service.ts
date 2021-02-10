@@ -15,17 +15,17 @@ export class UserService {
   getUsers(): Observable<Users[]> {
     return this.http.get<Users[]>(`${environment.apiUrl}/admin/users?archivage=0`);
   }
-  // tslint:disable-next-line:typedef
-  postUsers(body: FormData){
+
+  postUsers(body: FormData): any{
     return this.http.post(`${environment.apiUrl}/admin/users`,
      body, { headers : this.headerFormData} );
   }
-// tslint:disable-next-line:typedef
-  getUsersById(id: any)  {
+
+  getUsersById(id: any): any{
     return this.http.get (`${environment.apiUrl}/admin/users/` + id);
   }
   // tslint:disable-next-line:typedef
-  putUsers(id: number, body: FormData){
+  putUsers( body: FormData, id: number): any{
    return this.http.put(`${environment.apiUrl}/admin/users/` + id,
     body, { headers : this.headerFormData} );
   }
