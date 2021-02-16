@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {ProfilService} from '../../services/profil.service';
 import {UserService} from '../../services/user.service';
 import {ActivatedRoute} from '@angular/router';
+import {Users} from '../../modeles/users';
 
 
 @Component({
@@ -18,8 +19,7 @@ export class EditUserComponent implements OnInit {
 
   public users: any;
   private id: any ;
-  profils: any;
-  photo: any;
+  public profils: any = [];
   // @ts-ignore
   fileToUpload: File ;
   url = '';
@@ -57,13 +57,13 @@ export class EditUserComponent implements OnInit {
    this.profilService.getProfils().subscribe(
       reponse  => {
         this.profils = reponse;
-       // console.log(this.profils);
+        console.log(this.profils);
       }
     );
 
    this.id = this.route.snapshot.paramMap.get('id'); // il permet recuperer la valeur de l'id
    this.userService.getUsersById(this.id).subscribe(
-      (data) => {
+      (data: Users) => {
         this.formdata.patchValue(data);
 
        /* this.users = data;
@@ -94,8 +94,13 @@ export class EditUserComponent implements OnInit {
       });
   }
 
-  // tslint:disable-next-line:typedef
-  onSubmit() {
 
+  onSubmit(): any {
+    console.log(this.formdata.value);
+    this.userService.putUsers(this.formdata.value, this.id).subscribe(
+      (data: any) => {
+        console.log(data);
+        alert(data);
+      });
   }
 }

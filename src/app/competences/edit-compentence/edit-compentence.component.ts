@@ -85,7 +85,7 @@ export class EditCompentenceComponent implements OnInit {
     return (this.formCompetence.get('niveaux') as FormArray);
   }
   onSubmit(): any{
-    console.log(this.id);
+    // console.log(this.id);
     this.competenceService.putCompetence(this.formCompetence.value, this.id).subscribe(
       (data: any) => {
         console.log(data);

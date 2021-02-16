@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
 import {ProfilService} from '../../services/profil.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AddUserComponent implements OnInit {
 
   constructor(private formbuilder: FormBuilder,
               private userService: UserService,
-              private profilService: ProfilService) { }
+              private profilService: ProfilService,
+              private  router: Router) { }
   // @ts-ignore
   fileToUpload: File ;
   profils: any;
@@ -68,11 +70,12 @@ export class AddUserComponent implements OnInit {
     formData.append('telephone', this.formdata.get('telephone')?.value);
     console.log(this.formdata);
     return this.userService.postUsers(formData).subscribe(
-      (data) => {
+      (data: any) => {
         console.log(data);
         alert('insertion successfull');
+        this.router.navigate(['/users/list']);
       },
-      error => {
+      (error: any) => {
         alert('il ya une erreur deeeeeeeeeeeeeee');
         console.log(error);
       }

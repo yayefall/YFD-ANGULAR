@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfilService} from '../../../services/profil.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-profil',
@@ -8,7 +9,8 @@ import {ProfilService} from '../../../services/profil.service';
 })
 export class ListProfilComponent implements OnInit {
   profils: any = [];
-  constructor( private profilService: ProfilService) { }
+  constructor( private profilService: ProfilService,
+               private  route: Router) { }
 
   ngOnInit(): void {
     this.getProfil();
@@ -31,6 +33,7 @@ export class ListProfilComponent implements OnInit {
         (data: any) => {
           console.log(data);
           alert('supression avec success');
+          this.route.navigate(['/profils/list']);
         },
         (error: any) => {
           alert('erreur');

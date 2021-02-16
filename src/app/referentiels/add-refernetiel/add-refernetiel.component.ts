@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ReferentielService} from '../../services/referentiel.service';
 import {GrpcompetenceService} from '../../services/grpcompetence.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-refernetiel',
@@ -30,7 +31,8 @@ export class AddRefernetielComponent implements OnInit {
   }
   constructor( private formbuilder: FormBuilder,
                private  referentielService: ReferentielService,
-               private grpcompService: GrpcompetenceService) { }
+               private grpcompService: GrpcompetenceService,
+               private route: Router) { }
 
   ngOnInit(): void {
     this.grpcompService.getGroupCompetence().subscribe(
@@ -66,6 +68,7 @@ export class AddRefernetielComponent implements OnInit {
       (data: any) => {
         console.log(data);
         alert('insertion successfull');
+        this.route.navigate(['/referentiels/list']);
       },
         (error: any) => {
         alert('il ya une erreur deeeeeeeeeeeeeee');

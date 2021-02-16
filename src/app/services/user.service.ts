@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Users} from '../modeles/users';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,10 @@ export class UserService {
   // tslint:disable-next-line:typedef
   putUsers( body: FormData, id: number): any{
    return this.http.put(`${environment.apiUrl}/admin/users/` + id,
-    body, { headers : this.headerFormData} );
+    body, { headers : this.headerFormData}).pipe(
+     map(reponse => {
+       return reponse;
+     }));
   }
 
   deleteUsers(id: any): any{

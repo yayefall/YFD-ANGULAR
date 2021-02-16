@@ -29,6 +29,7 @@ import {AdminComponent} from './users/admin/admin.component';
 import {PromotionsComponent} from './promotions/promotions.component';
 import {AddPromotionComponent} from './promotions/add-promotion/add-promotion.component';
 import {EditProfilComponent} from './users/profils/edit-profil/edit-profil.component';
+import {DetailUserComponent} from './users/detail-user/detail-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin', pathMatch: 'full'},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'users/add', component: AddUserComponent},
   {path: 'users/list', component: ListUserComponent},
   {path: 'users/edit/:id', component: EditUserComponent},
+  {path: 'users/detail/:id', component: DetailUserComponent},
 
   {path: 'promotions', component: PromotionsComponent},
   {path: 'promotions/add', component: AddPromotionComponent},

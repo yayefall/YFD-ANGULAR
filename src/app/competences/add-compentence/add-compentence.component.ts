@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GrpcompetenceService} from '../../services/grpcompetence.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CompetenceService} from '../../services/competence.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-compentenc',
@@ -24,7 +25,8 @@ export class AddCompentenceComponent implements OnInit {
 
   constructor(private grcompetenceService: GrpcompetenceService,
               private competenceService: CompetenceService,
-              private formbuilder: FormBuilder) {}
+              private formbuilder: FormBuilder,
+              private route: Router) {}
 
   ngOnInit(): void {
     this.grcompetenceService.getGroupCompetence().subscribe(
@@ -51,6 +53,7 @@ export class AddCompentenceComponent implements OnInit {
       (data: any) => {
         console.log(data);
         alert('insertion successefull');
+        this.route.navigate(['/competence/list']);
       },
       (error: any) => {
         alert('erreur dinsertion');

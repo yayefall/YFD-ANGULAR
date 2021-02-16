@@ -21,8 +21,8 @@
             Création d'un Utilisateur</div>
           <div class="">
             <div class=" col-md-12 mt-5 mb-3" >
-              <div class="" >
-                <img src="{{url}}" alt="" style="width: 30%; border-radius: 50%;">
+              <div class=" card-img-top rounded-circle align-self-center text-center " >
+                <img src="{{url}}/asset/" alt="" style="width: 8em; height:8em;">
               </div>
             </div>
 
@@ -110,7 +110,6 @@
                        id="photo"
                        class="form-control shadow-lg"
                        placeholder="choisir un ficher *"
-                       value=""
                        [formControlName]="'photo'"
                        (change)="handleFileInput($event)">
               </div>

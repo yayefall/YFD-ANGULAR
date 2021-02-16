@@ -23,6 +23,7 @@ export class ListUserComponent implements OnInit {
         console.log(data);
       },
       error => {
+        alert('il ya erreur de recupereration des données users');
       }
     );
   }

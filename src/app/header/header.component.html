@@ -170,12 +170,50 @@
             <option value="2">COHORTE 2</option>
             <option value="3">COHORTE 3</option>
           </select>
+        <!--  <ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Rechercher un article..."
+              />
+              <button class="btn btn-outline-danger my-3 my-sm-0" type="submit"
+                      style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)">
+                Rechercher
+              </button>
+            </form>
+          </ul>-->
+          <!--  <ul><div class="nav-item">
+         <button class="btn btn-light my-2 my-sm-0"
+               title="Se dirige vers la page de Connexion"
+               type="submit" style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)"
+               (click)="logOout()">Deconnexion</button></div></ul>-->
 
-          <ul><div class="nav-item">
-      <button class="btn btn-light my-2 my-sm-0"
-              title="Se dirige vers la page de Connexion"
-              type="submit" style="background: -webkit-linear-gradient(left, #FFB88C, #DE6262)"
-              (click)="logOout()">Deconnexion</button></div></ul>
+          <!-- <ul><div class="nav-item">
+             <a class="btn btn-light my-2 my-sm-0"
+                     title="Se dirige vers la page de Connexion"
+                     ><img src="data:image/jpg;base64{{users.photo}}" alt=""></a> {{users.username}}</div></ul>-->
+
+          <ul class="navbar-nav mr-o ml-4">
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >Utilisateur</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item"
+                   type="submit"
+                   title="Se dirige vers la page de Connexion"
+                   (click)="logOout()">Se Deconnecter</a>
+              </div>
+            </li>
+          </ul>
 
       </div>
       </nav>

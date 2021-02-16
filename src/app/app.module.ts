@@ -55,6 +55,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {ButtonsModule, CollapseModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
 import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { DetailUserComponent } from './users/detail-user/detail-user.component';
+import {QRCodeModule} from 'angularx-qrcode';
 
 
 
@@ -96,7 +98,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AdminComponent,
     PromotionsComponent,
     AddPromotionComponent,
-    AccueilComponent
+    AccueilComponent,
+    DetailUserComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +121,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ButtonsModule,
     AngularMultiSelectModule,
     MDBBootstrapModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    QRCodeModule,
 
   ],
   providers: [

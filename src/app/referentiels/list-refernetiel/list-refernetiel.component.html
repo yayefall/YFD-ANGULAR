@@ -4,9 +4,11 @@
         routerLinkActive="active"
         routerLink="/referentiels/add"
         style="margin: 1%">Creer Référentiels</button>
+<!--<button class="btn btn-outline-danger float-right" (click)="downloadPdf()">DownloadPDF</button>-->
 <table class="table mt-5 shadow-lg p-3  bg-white rounded w-90 ">
 
-    <div class="shadow-lg mt-4 p-4 rounded-3 mb-4 ml-4 mr-4  " *ngFor="let tab of referentiels | paginate: { itemsPerPage: 3, currentPage: p }">
+    <div class="shadow-lg mt-4 p-4 rounded-3 mb-4 ml-4 mr-4"
+         *ngFor="let tab of referentiels | paginate: { itemsPerPage: 3, currentPage: p }">
       <div class="float-right">
         <a routerLinkActive="active" routerLink="/referentiels/edit/{{tab.id}}">
           <button class="btn btn-sm btn-outline-info float-right"
@@ -30,21 +32,27 @@
           <!-- <h2 class="card-title">Programme:</h2>
            <p><img src="{{tab.programme}}" alt=""></p>-->
 
+          <!--  <h2 class="card-title">Programme:</h2>
+            <a href="data:application/pdf;base64,[base64]" download="file.pdf">openFile</a>-->
+          <!--<p><button class="btn btn-outline-success" (click)="openProgramme()">openFile</button></p>-->
+          <h2 class="card-title">Programme:</h2>
+          <button class="btn btn-outline-danger" (click)="openProgramme()">openProgramme</button>
+
           <h2 class="card-title">CritereAdmission:</h2>
-          <p>{{tab.critereAdmission}}</p>
+            <p>{{tab.critereAdmission}}</p>
 
-          <h2 class="card-title">CritereEvaluation:</h2>
-          <p>{{tab.critereEvaluation}}</p>
+            <h2 class="card-title">CritereEvaluation:</h2>
+            <p>{{tab.critereEvaluation}}</p>
 
-          <h2 class="card-title">GroupeCompetence:</h2>
-          <div class="shadow-lg p-1 mb-2 text-center" >
-            <ul class="list-group">
-              <li class="list-group-item"  *ngFor="let g of tab.groupeCompetences"> {{g.libelle}}</li>
-            </ul>
+            <h2 class="card-title">GroupeCompetence:</h2>
+            <div class="shadow-lg p-1 mb-2 text-center" >
+              <ul class="list-group">
+                <li class="list-group-item"  *ngFor="let g of tab.groupeCompetences"> {{g.libelle}}</li>
+              </ul>
+            </div>
+
           </div>
 
-        </div>
-
-    </div>
-</table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>

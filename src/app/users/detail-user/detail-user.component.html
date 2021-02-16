@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+</head>
+<body>
+
+<!-- -----------------------------------------------------------NAV BAR -->
+<!-- -----------------------------------------------------------CONTAINER -->
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="display-4">Détails de l'utilisateur</h2>
+  </div>
+  <div class="row">
+    <!--<div class="col-sm-8 mb-4">
+        <div class="card">
+
+        <div class="card-body">
+          <h3 class="card-title">Veuillez scaner le code</h3>
+          <qrcode [qrdata]="allowEmptyString"
+                  [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+      </div>
+    </div>-->
+    <!-- -------------------------------------------- card1-->
+    <div class="col-sm-8 mb-4 shadow-lg">
+      <div class="card">
+
+        <div class="card-body">
+        <div class="text-center">
+          <img style="width: 8em; height:8em;"
+               class="card-img-top  mb-3"
+               src="data:image/jpg;base64,{{users.photo}}"
+               alt="" /></div>
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.nom}}
+          </h2></span>
+          </div>
+
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.prenom}}
+          </h2></span>
+          </div>
+
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.username}}
+          </h2></span>
+          </div>
+
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.telephone}}
+          </h2></span>
+          </div>
+
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.profils.libelle}}
+          </h2></span>
+          </div>
+          <div class="list-group col-md-8">
+            <span class="list-group-item list-group-item-action">
+          <h2 class="card-text">
+            {{users.genre}}
+          </h2></span>
+          </div>
+
+        </div>
+      </div>
+      <div class="list-group">
+        <span class="list-group-item list-group-item-action">
+                    <a href="#"><i class="fab fa-facebook-square fa-2x text-primary mr-1"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp fa-2x text-success mr-1"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x text-primary mr-1"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-2x text-warning mr-1"></i></a>
+                    <a href="#"><i class="fab fa-youtube fa-2x text-danger"></i></a>
+                </span>
+      </div>
+      <div><button class="btn btn-outline-danger mb-3 mt-3" (click)="generatePdf()"> Carte etudiante</button></div>
+    </div>
+    <!-- -----------------------------------------------------------card2 -->
+
+  </div>
+</div>
+</body>
+</html>

@@ -24,11 +24,9 @@ export class LoginComponent implements OnInit {
     private authenticationService: ConnexionService
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
-    // console.log('1  ' + this.maConnexion);
+
   }
 
-  // @ts-ignore
-  // maConnexion = false;
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -40,15 +38,12 @@ export class LoginComponent implements OnInit {
     }*/
   }
 
-  // tslint:disable-next-line:typedef
-  get f() {
+  get f(): any {
     return this.loginForm.controls;
   }
 
-  // tslint:disable-next-line:typedef
-  onSubmit() {
+  onSubmit(): any {
     this.submitted = true;
-
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -60,9 +55,13 @@ export class LoginComponent implements OnInit {
         data => {
           const decodedToken = this.authenticationService.getMyToken();
           console.log(decodedToken);
+        //  if (decodedToken.archivage === false){
           if (decodedToken.roles[0] === 'ROLE_ADMIN'){
             this.router.navigate(['/admin']);
           }
+        /*  }else {
+            console.log('Connexion impossible, Veuillez vous connecter');
+          }*/
           // this.router.navigate(['admin']);
           console.log(this.authenticationService.getMyToken());
         });
