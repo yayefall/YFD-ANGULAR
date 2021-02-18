@@ -16,21 +16,31 @@
         <th scope="col">id</th>
         <th scope="col">Libelle</th>
         <th scope="col">Action</th>
+
       </tr>
       </thead>
       <tbody>
        <tr *ngFor="let profil of profils ">
          <th scope="row">{{profil.id}}</th>
-         <td>{{profil.libelle}}</td>
+         <a><td>{{profil.libelle}}</td></a>
+
 
          <button (click)="deleteProfilsById(profil.id)"
                  class="btn btn-sm btn-outline-danger float-right"
                  data-toggle="tooltip"
-              data-placement="top" title="supprimer">
+              data-placement="top" title="supprimer {{profil.libelle}}">
        <i class="fas fa-minus-circle"></i></button>
+
          <a routerLinkActive="active" routerLink="/profils/edit/{{profil.id}}">
-           <button class="btn btn-sm btn-outline-info float-right" data-toggle="tooltip"
-              data-placement="top" title="modifier"><i class="fas fa-edit"></i></button></a>
+           <button class="btn btn-sm btn-outline-success float-right" data-toggle="tooltip"
+              data-placement="top" title="modifier {{profil.libelle}}"><i class="fas fa-edit"></i></button></a>
+
+         <button routerLinkActive="active" routerLink="/profils/detail/{{profil.id}}"
+                 class="btn btn-sm btn-outline-info float-right"
+                 data-toggle="tooltip"
+                 data-placement="top" title="Lister {{profil.libelle}}">
+           <i class="fas fa-list-alt"></i></button>
+
     </tr>
     </tbody>
   </table>

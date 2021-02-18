@@ -30,6 +30,7 @@ import {PromotionsComponent} from './promotions/promotions.component';
 import {AddPromotionComponent} from './promotions/add-promotion/add-promotion.component';
 import {EditProfilComponent} from './users/profils/edit-profil/edit-profil.component';
 import {DetailUserComponent} from './users/detail-user/detail-user.component';
+import {DetailProfilComponent} from './users/profils/detail-profil/detail-profil.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin', pathMatch: 'full'},
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'profils/add', component: AddProfilComponent},
   {path: 'profils/list', component: ListProfilComponent},
   {path: 'profils/edit/:id', component: EditProfilComponent},
+  {path: 'profils/detail/:id', component: DetailProfilComponent},
 
   {path: 'profilsorties', component: ProfilsortiesComponent},
   {path: 'profilsorties/add', component: AddProfilsortieComponent},

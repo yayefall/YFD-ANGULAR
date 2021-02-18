@@ -24,7 +24,7 @@ export class ReferentielService {
   }
 
   putReferentiel(body: any, id: number): any {
-    return this.http.put(`${environment.apiUrl}/admin/referentiels/` + id,
+    return this.http.post(`${environment.apiUrl}/admin/referentiels/` + id,
       body, {headers: this.headerFormData});
   }
   getReferentielById(id: any): any {

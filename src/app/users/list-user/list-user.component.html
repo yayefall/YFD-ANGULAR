@@ -35,19 +35,19 @@
           <button (click)="deleteUserById(user.id)"
                   class="btn btn-sm btn-outline-info float-right"
                   data-toggle="tooltip"
-                  data-placement="top" title="Supprimer">
+                  data-placement="top" title="Supprimer {{user.prenom}}">
             <i class="fas fa-minus-circle"></i></button>
 
          <a routerLinkActive="active" routerLink="/users/edit/{{user.id}}">
            <button class="btn btn-sm btn-outline-danger float-right"
                    data-toggle="tooltip"
-                  data-placement="top" title="Modifier">
+                  data-placement="top" title="Modifier {{user.prenom}}">
             <i class="fas fa-edit"></i></button></a>
 
          <a routerLinkActive="active" routerLink="/users/detail/{{user.id}}">
            <button class="btn btn-sm btn-outline-success float-right"
                    data-toggle="tooltip"
-                   data-placement="top" title="Voir">
+                   data-placement="top" title="Voir {{user.prenom}}">
              <i class="fas fa-eye"></i></button></a>
         </tr>
 

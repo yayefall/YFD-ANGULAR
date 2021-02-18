@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {GrpcompetenceService} from '../../services/grpcompetence.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CompetenceService} from '../../services/competence.service';
 
 @Component({
@@ -22,7 +22,8 @@ export class EditGrpcompetenceComponent implements OnInit {
   constructor( private  formbuilder: FormBuilder,
                private grpcompetenceService: GrpcompetenceService,
                private competenceService: CompetenceService,
-               private route: ActivatedRoute) { }
+               private route: ActivatedRoute,
+               private router: Router) { }
 
   public GroupeCompetence: any;
   private id: any;
@@ -58,6 +59,7 @@ export class EditGrpcompetenceComponent implements OnInit {
      (data: any) => {
     console.log(data);
     alert('modification avec succes');
+    this.router.navigate(['/groupecompetences/list']);
     },
     (error: any) => {
     alert('il ya une erreur dee');

@@ -57,6 +57,7 @@ import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
 import {QRCodeModule} from 'angularx-qrcode';
+import { DetailProfilComponent } from './users/profils/detail-profil/detail-profil.component';
 
 
 
@@ -99,7 +100,8 @@ import {QRCodeModule} from 'angularx-qrcode';
     PromotionsComponent,
     AddPromotionComponent,
     AccueilComponent,
-    DetailUserComponent
+    DetailUserComponent,
+    DetailProfilComponent
   ],
   imports: [
     BrowserModule,

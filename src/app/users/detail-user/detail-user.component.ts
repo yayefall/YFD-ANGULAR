@@ -97,6 +97,7 @@ export class DetailUserComponent implements OnInit {
           },
           tableExample: {
             margin: [0, 5, 0, 15],
+            border: 'none',
           },
           tableHeader: {
             bold: true,

@@ -93,9 +93,17 @@
                      aria-labelledby="headingOne"
                      data-parent="#myAccordion">
               <div class="card-body">
-                <button class="tablinks col-md-12 p-2 bg-warning"
-                        [formControlName]="'referentiels'"
-                *ngFor="let item of referentiels">{{item.libelle}}</button>
+                <angular2-multiselect class=" form-control shadow-lg col-md-12"
+                                      [data]="referentiels" [(ngModel)]="selectedItems"
+                                      [settings]="dropdownSettings"
+                                      [formControlName]="'referentiels'" >
+                </angular2-multiselect>
+
+
+                <!--  <button class="tablinks col-md-12 p-2 bg-warning"
+                       [formControlName]="'referentiels'"
+               *ngFor="let item of referentiels">{{item.libelle}}</button>-->
+
 
               </div>
 
@@ -106,8 +114,7 @@
       <div><input type="file" name="file"
                   [formControlName]="'file'"
                   class="form-control shadow-lg"></div>
-      <div><button class="btn btn-outline-danger  rounded mt-3 mb-3"
-                   [disabled]="!formPromo.valid">Enregistrer</button></div>
+      <div><button class="btn btn-outline-danger  rounded mt-3 mb-3">Enregistrer</button></div>
 
        </form>
       </div>

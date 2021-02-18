@@ -9,7 +9,8 @@ import {ReferentielService} from '../../services/referentiel.service';
   styleUrls: ['./add-promotion.component.scss']
 })
 export class AddPromotionComponent implements OnInit {
-
+  selectedItems = [];
+  dropdownSettings: any = {};
   referentiels: any = [];
 
   formPromo =  this.formbuilder.group({
@@ -34,8 +35,19 @@ export class AddPromotionComponent implements OnInit {
        (response: any)  => {
          this.referentiels = response;
          console.log(this.referentiels);
-       }
-     );
+       });
+
+     this.dropdownSettings = {
+      primaryKey: 'id',
+      singleSelection: false,
+      text: 'Select One or More referntiels',
+      labelKey: 'libelle',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      enableSearchFilter: true,
+      classes: 'myclass custom-class'
+    };
+
   }
 
   onSubmit(): any {

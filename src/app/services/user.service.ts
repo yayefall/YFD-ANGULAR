@@ -27,7 +27,7 @@ export class UserService {
   }
   // tslint:disable-next-line:typedef
   putUsers( body: FormData, id: number): any{
-   return this.http.put(`${environment.apiUrl}/admin/users/` + id,
+   return this.http.post(`${environment.apiUrl}/admin/users/` + id,
     body, { headers : this.headerFormData}).pipe(
      map(reponse => {
        return reponse;

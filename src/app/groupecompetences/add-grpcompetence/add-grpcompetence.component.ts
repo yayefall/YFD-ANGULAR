@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {GrpcompetenceService} from '../../services/grpcompetence.service';
 import {CompetenceService} from '../../services/competence.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-grpcompetence',
@@ -20,7 +21,8 @@ export class AddGrpcompetenceComponent implements OnInit {
   });
   constructor( private  formbuilder: FormBuilder,
                private grpcompetenceService: GrpcompetenceService,
-               private competenceService: CompetenceService) { }
+               private competenceService: CompetenceService,
+               private router: Router) { }
 
   ngOnInit(): void {
   this.competenceService.getCompetence().subscribe(
@@ -45,6 +47,7 @@ export class AddGrpcompetenceComponent implements OnInit {
      (data: any) => {
     console.log(data);
     alert('insertion successefull');
+    this.router.navigate(['/groupecompetences/list']);
     },
   (error: any ) => {
     alert('erreur dinsertion');

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ProfilService} from '../../services/profil.service';
 import {UserService} from '../../services/user.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Users} from '../../modeles/users';
 
 
@@ -15,7 +15,8 @@ export class EditUserComponent implements OnInit {
   constructor(private formbuilder: FormBuilder,
               private profilService: ProfilService,
               private userService: UserService,
-              private  route: ActivatedRoute) { }
+              private  route: ActivatedRoute,
+              private router: Router) { }
 
   public users: any;
   private id: any ;
@@ -96,11 +97,26 @@ export class EditUserComponent implements OnInit {
 
 
   onSubmit(): any {
-    console.log(this.formdata.value);
-    this.userService.putUsers(this.formdata.value, this.id).subscribe(
+    const formData = new FormData();
+    formData.append('nom', this.formdata.get('nom')?.value);
+    formData.append('prenom', this.formdata.get('prenom')?.value);
+    formData.append('username', this.formdata.get('username')?.value);
+    formData.append('email', this.formdata.get('email')?.value);
+    formData.append('genre', this.formdata.get('gender')?.value);
+    formData.append('photo', this.fileToUpload);
+    formData.append('telephone', this.formdata.get('telephone')?.value);
+    formData.append('_method', 'put');
+    console.log(this.formdata);
+    this.userService.putUsers(formData, this.id).subscribe(
       (data: any) => {
         console.log(data);
-        alert(data);
-      });
+       // alert(data);
+        alert('modification reussie');
+        this.router.navigate(['/users/list']);
+      },
+      (error: any) => {
+        alert('modification echec');
+       }
+      );
   }
 }

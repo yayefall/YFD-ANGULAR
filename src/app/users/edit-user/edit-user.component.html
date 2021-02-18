@@ -100,7 +100,7 @@
                   <div class="form-group">
                     <label >Profils</label>
                     <select class=" form-control shadow-lg form-select" [formControlName]="'profils'">
-                      <option *ngFor="let p of profils" value="api/admin/profils/{{p.id}}">{{p.libelle}}</option>
+                      <option *ngFor="let p of profils" value="api/admin/profils/{{p.id}}" readonly>{{p.libelle}}</option>
                     </select>
                   </div>
 
